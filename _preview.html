@@ -33,7 +33,8 @@
         }
       } catch (e) {}
     });
-    f.src = f.dataset.src;
+    const sep = f.dataset.src.indexOf('?') >= 0 ? '&' : '?';
+    f.src = f.dataset.src + sep + '_=' + Date.now();
   });
 </script>
 </body>
