@@ -249,6 +249,8 @@
     const scale = len <= 7 ? 1 : len <= 11 ? 0.9 : len <= 16 ? 0.78 : 0.68;
     card.style.setProperty('--kw-scale', String(scale));
 
+    card.dataset.latin = (/^[\x20-\x7E]+$/.test(kw) && /[A-Za-z]/.test(kw)) ? '1' : '0';
+
     const nm = state.name.trim();
     cardName.textContent = nm ? `${nm} 님` : '이름';
 
@@ -572,8 +574,13 @@
     let weight = '500';
     if (styleKey === 'modern') { family = '"Noto Sans KR", sans-serif'; weight = '700'; }
     else if (styleKey === 'hand') { family = '"Nanum Pen Script", cursive'; weight = '400'; }
-    let size = styleKey === 'hand' ? 82 : 68;
-    letterSpacing(ctx, 0);
+    const latin = /^[\x20-\x7E]+$/.test(kw) && /[A-Za-z]/.test(kw);
+    if (latin && (styleKey === 'any' || styleKey === 'classic')) {
+      family = '"Cormorant Garamond", "Noto Serif KR", serif';
+      weight = '600';
+    }
+    let size = styleKey === 'hand' ? 82 : latin ? 88 : 68;
+    letterSpacing(ctx, latin ? 3 : 0);
     setFont(ctx, `${weight} ${size}px ${family}`);
     const maxW = W - 190;
     let lines = wrapLines(ctx, kw, maxW);

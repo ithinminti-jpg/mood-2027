@@ -23,7 +23,7 @@
 }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-bottom:110px}
 body{
   margin:0;
   padding:0 0 calc(104px + env(safe-area-inset-bottom));
@@ -239,6 +239,13 @@ main,header,footer,.dock{position:relative;z-index:1}
 .mood-card[data-style="modern"] .card-keyword{font-family:var(--sans);font-weight:700;letter-spacing:-0.03em}
 .mood-card[data-style="hand"] .card-keyword{font-family:var(--hand);font-weight:400;font-size:calc(clamp(24px,7vw,31px) * var(--kw-scale));letter-spacing:0}
 .mood-card[data-style="any"] .card-keyword{font-family:var(--serif)}
+.mood-card[data-latin="1"][data-style="any"] .card-keyword,
+.mood-card[data-latin="1"][data-style="classic"] .card-keyword{
+  font-family:var(--display);
+  font-weight:600;
+  letter-spacing:.03em;
+  font-size:calc(clamp(24px,6.8vw,31px) * var(--kw-scale));
+}
 .card-medal{
   width:92px; height:92px;
   margin:16px 0 14px;
@@ -276,7 +283,7 @@ main,header,footer,.dock{position:relative;z-index:1}
 }
 .card-name{
   margin:0;
-  font-size:13px;
+  font-size:13.5px;
   font-weight:500;
   letter-spacing:.06em;
 }
@@ -284,7 +291,7 @@ main,header,footer,.dock{position:relative;z-index:1}
   margin:4px 0 0;
   font-size:8.5px;
   letter-spacing:.2em;
-  opacity:.72;
+  opacity:.8;
 }
 .stage-hint{
   margin:16px 0 0;
