@@ -17,7 +17,7 @@
     colorId: null,
     moodKey: null,
     arts: [null, null],   // 그림 자리 ①, ② (같은 항목 중복 허용)
-    lines: [null, null]   // 라인·구분 자리 ①, ②
+    lines: [null, null]   // 라인 자리 ①, ②
   };
 
   let DATA = null;
@@ -227,7 +227,8 @@
   }
 
   /* 한 번 누르면 빈 자리(① → ②)에 담기고, 둘 다 차 있으면 ② 자리를 바꾼다.
-     같은 항목을 두 번 누르면 ①·②에 같은 것이 담긴다. */
+     같은 항목을 두 번 누르면 ①·②에 같은 것이 담긴다.
+     이미 담긴 항목을 다시 눌러도 절대 취소(해제)되지 않는다 — 비우기는 위의 슬롯 칩 ×로만. */
   function pick(kind, id) {
     const arr = slotsOf(kind);
     let slot = arr.indexOf(null);
@@ -241,8 +242,10 @@
 
     const name = iconName(id);
     const hintId = kind === 'art' ? 'artHint' : 'lineHint';
-    if (replaced) {
+    if (replaced && replaced !== id) {
       notice(hintId, `${MARKS[slot]} 자리의 ‘${iconName(replaced)}’${josa(iconName(replaced), '을', '를')} ‘${name}’${josa(name, '으로', '로')} 바꿨어요.`, true);
+    } else if (replaced && replaced === id) {
+      notice(hintId, `① ② 자리에 이미 같은 ‘${name}’${josa(name, '이', '가')} 담겨 있어요. 자리를 비우려면 위의 ×를 눌러 주세요.`, true);
     } else if (arr[0] && arr[1] && arr[0] === arr[1]) {
       notice(hintId, `① ② 자리에 같은 ‘${name}’${josa(name, '을', '를')} 담았어요.`, true);
     } else {

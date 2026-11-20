@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Pen+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20271120l">
+<link rel="stylesheet" href="styles.css?v=20271120m">
 </head>
 <body>
 <div class="sky" aria-hidden="true"></div>
@@ -198,9 +198,9 @@
       </div>
 
       <div class="pick-block" id="blockLine">
-        <div class="pick-head"><h3>라인·구분</h3><span class="pick-count">7</span><span class="pick-state" id="lineState">0 / 2</span></div>
+        <div class="pick-head"><h3>라인</h3><span class="pick-count">7</span><span class="pick-state" id="lineState">0 / 2</span></div>
         <div class="slots" id="lineSlots" role="group" aria-label="고른 라인 자리"></div>
-        <div class="line-grid" id="lineGrid" role="group" aria-label="라인·구분 7종"></div>
+        <div class="line-grid" id="lineGrid" role="group" aria-label="라인 7종"></div>
         <p class="pick-hint" id="lineHint">빈 자리를 누르면 ①, ② 순서로 담겨요. 같은 라인을 두 번 눌러도 돼요.</p>
       </div>
 
@@ -228,8 +228,9 @@
       </header>
       <p class="panel-desc">2027년 나와 함께 할 단어를 적어주세요</p>
       <div class="field">
-        <input type="text" id="inputKeyword" name="keyword" maxlength="24" placeholder="예) 꿀호떡 / 나는멋있어 / ArieL / Romans5:8 / Happy" aria-label="Your Keyword">
+        <input type="text" id="inputKeyword" name="keyword" maxlength="24" placeholder="입력해 주세요" aria-label="Your Keyword" aria-describedby="keywordExamples">
       </div>
+      <p class="field-hint" id="keywordExamples">예) <span class="ex">꿀호떡</span> / <span class="ex">나는멋있어</span> / <span class="ex">ArieL</span> / <span class="ex">Romans5:8</span> / <span class="ex">Happy</span></p>
       <p class="error" id="errKeyword" hidden>단어를 적어 주세요.</p>
     </section>
 
@@ -262,6 +263,6 @@
   </div>
 </div>
 
-<script src="app.js?v=20271120l"></script>
+<script src="app.js?v=20271120m"></script>
 </body>
 </html>
