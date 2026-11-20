@@ -1,4 +1,5 @@
 {
+ "enc": 1,
  "year": 2027,
  "title": "2027 나만의 무드 카드",
  "colors": [
@@ -8,7 +9,7 @@
    "hex": "#e5e4df",
    "pearl": false,
    "file": "assets/colors/c01.png",
-   "ans": "c01 | #1 흰색"
+   "ans": "YzAxIHwgIzEg7Z2w7IOJ"
   },
   {
    "id": "c02",
@@ -16,7 +17,7 @@
    "hex": "#c2bdb4",
    "pearl": false,
    "file": "assets/colors/c02.png",
-   "ans": "c02 | #2(연회색)"
+   "ans": "YzAyIHwgIzIo7Jew7ZqM7IOJKQ=="
   },
   {
    "id": "c03",
@@ -24,7 +25,7 @@
    "hex": "#c0b075",
    "pearl": false,
    "file": "assets/colors/c03.png",
-   "ans": "c03 | #3(골드)"
+   "ans": "YzAzIHwgIzMo6rOo65OcKQ=="
   },
   {
    "id": "c04",
@@ -32,7 +33,7 @@
    "hex": "#f6d9d9",
    "pearl": false,
    "file": "assets/colors/c04.png",
-   "ans": "c04 | #4(연핑크)"
+   "ans": "YzA0IHwgIzQo7Jew7ZWR7YGsKQ=="
   },
   {
    "id": "c05",
@@ -40,7 +41,7 @@
    "hex": "#8bbaca",
    "pearl": false,
    "file": "assets/colors/c05.png",
-   "ans": "c05 | #5(연하늘)"
+   "ans": "YzA1IHwgIzUo7Jew7ZWY64qYKQ=="
   },
   {
    "id": "c06",
@@ -48,7 +49,7 @@
    "hex": "#e1c1db",
    "pearl": false,
    "file": "assets/colors/c06.png",
-   "ans": "c06 | #8(연보라)"
+   "ans": "YzA2IHwgIzgo7Jew67O06528KQ=="
   },
   {
    "id": "c07",
@@ -56,7 +57,7 @@
    "hex": "#e8b29b",
    "pearl": false,
    "file": "assets/colors/c07.png",
-   "ans": "c07 | #9(피치핑크)"
+   "ans": "YzA3IHwgIzko7ZS87LmY7ZWR7YGsKQ=="
   },
   {
    "id": "c08",
@@ -64,7 +65,7 @@
    "hex": "#3f484c",
    "pearl": false,
    "file": "assets/colors/c08.png",
-   "ans": "c08 | #10(진회색)"
+   "ans": "YzA4IHwgIzEwKOynhO2ajOyDiSk="
   },
   {
    "id": "c09",
@@ -72,7 +73,7 @@
    "hex": "#e23f47",
    "pearl": false,
    "file": "assets/colors/c09.png",
-   "ans": "c09 | #11(빨강)"
+   "ans": "YzA5IHwgIzExKOu5qOqwlSk="
   },
   {
    "id": "c10",
@@ -80,7 +81,7 @@
    "hex": "#182f77",
    "pearl": false,
    "file": "assets/colors/c10.png",
-   "ans": "c10 | #12(파랑)"
+   "ans": "YzEwIHwgIzEyKO2MjOuekSk="
   },
   {
    "id": "c11",
@@ -88,7 +89,7 @@
    "hex": "#4a0d10",
    "pearl": false,
    "file": "assets/colors/c11.png",
-   "ans": "c11 | #13(와인)"
+   "ans": "YzExIHwgIzEzKOyZgOyduCk="
   },
   {
    "id": "c12",
@@ -96,7 +97,7 @@
    "hex": "#635330",
    "pearl": false,
    "file": "assets/colors/c12.png",
-   "ans": "c12 | #14(브론즈)"
+   "ans": "YzEyIHwgIzE0KOu4jOuhoOymiCk="
   },
   {
    "id": "c13",
@@ -104,7 +105,7 @@
    "hex": "#232524",
    "pearl": false,
    "file": "assets/colors/c13.png",
-   "ans": "c13 | #15(검정)"
+   "ans": "YzEzIHwgIzE1KOqygOyglSk="
   },
   {
    "id": "c14",
@@ -112,7 +113,7 @@
    "hex": "#a7bdb1",
    "pearl": false,
    "file": "assets/colors/c14.png",
-   "ans": "c14 | #16(연민트)"
+   "ans": "YzE0IHwgIzE2KOyXsOuvvO2KuCk="
   },
   {
    "id": "c15",
@@ -120,7 +121,7 @@
    "hex": "#114d2a",
    "pearl": false,
    "file": "assets/colors/c15.png",
-   "ans": "c15 | #17(초록)"
+   "ans": "YzE1IHwgIzE3KOy0iOuhnSk="
   },
   {
    "id": "c16",
@@ -128,7 +129,7 @@
    "hex": "#712684",
    "pearl": false,
    "file": "assets/colors/c16.png",
-   "ans": "c16 | #18(보라)"
+   "ans": "YzE2IHwgIzE4KOuztOudvCk="
   },
   {
    "id": "c17",
@@ -136,7 +137,7 @@
    "hex": "#ed7417",
    "pearl": false,
    "file": "assets/colors/c17.png",
-   "ans": "c17 | #19(주황)"
+   "ans": "YzE3IHwgIzE5KOyjvO2ZqSk="
   },
   {
    "id": "c18",
@@ -144,7 +145,7 @@
    "hex": "#07a3c8",
    "pearl": false,
    "file": "assets/colors/c18.png",
-   "ans": "c18 | #20(청록)"
+   "ans": "YzE4IHwgIzIwKOyyreuhnSk="
   },
   {
    "id": "c19",
@@ -152,7 +153,7 @@
    "hex": "#88161c",
    "pearl": false,
    "file": "assets/colors/c19.png",
-   "ans": "c19 | #40(진빨강)"
+   "ans": "YzE5IHwgIzQwKOynhOu5qOqwlSk="
   },
   {
    "id": "c20",
@@ -160,7 +161,7 @@
    "hex": "#2e6199",
    "pearl": false,
    "file": "assets/colors/c20.png",
-   "ans": "c20 | #41(네이비)"
+   "ans": "YzIwIHwgIzQxKOuEpOydtOu5hCk="
   },
   {
    "id": "c21",
@@ -168,7 +169,7 @@
    "hex": "#d7888d",
    "pearl": true,
    "file": "assets/colors/c21.png",
-   "ans": "c21 | #21(은펄연핑크)"
+   "ans": "YzIxIHwgIzIxKOydgO2OhOyXsO2Vke2BrCk="
   },
   {
    "id": "c22",
@@ -176,7 +177,7 @@
    "hex": "#90a5b4",
    "pearl": true,
    "file": "assets/colors/c22.png",
-   "ans": "c22 | #22(은펄연하늘)"
+   "ans": "YzIyIHwgIzIyKOydgO2OhOyXsO2VmOuKmCk="
   },
   {
    "id": "c23",
@@ -184,7 +185,7 @@
    "hex": "#91bea0",
    "pearl": true,
    "file": "assets/colors/c23.png",
-   "ans": "c23 | #23(은펄연민트)"
+   "ans": "YzIzIHwgIzIzKOydgO2OhOyXsOuvvO2KuCk="
   },
   {
    "id": "c24",
@@ -192,7 +193,7 @@
    "hex": "#bf88af",
    "pearl": true,
    "file": "assets/colors/c24.png",
-   "ans": "c24 | #24(은펄연보라)"
+   "ans": "YzI0IHwgIzI0KOydgO2OhOyXsOuztOudvCk="
   },
   {
    "id": "c25",
@@ -200,7 +201,7 @@
    "hex": "#bf2123",
    "pearl": true,
    "file": "assets/colors/c25.png",
-   "ans": "c25 | #29(은펄빨강)"
+   "ans": "YzI1IHwgIzI5KOydgO2OhOu5qOqwlSk="
   },
   {
    "id": "c26",
@@ -208,7 +209,7 @@
    "hex": "#5a5a65",
    "pearl": true,
    "file": "assets/colors/c26.png",
-   "ans": "c26 | #30(은펄진회색)"
+   "ans": "YzI2IHwgIzMwKOydgO2OhOynhO2ajOyDiSk="
   }
  ],
  "icons": [
@@ -219,7 +220,7 @@
    "w": 39,
    "h": 34,
    "file": "assets/icons/i001.png",
-   "ans": "i001 | 아이콘1 | 하트(채움)"
+   "ans": "aTAwMSB8IOyVhOydtOy9mDEgfCDtlZjtirgo7LGE7JuAKQ=="
   },
   {
    "id": "i002",
@@ -228,7 +229,7 @@
    "w": 40,
    "h": 37,
    "file": "assets/icons/i002.png",
-   "ans": "i002 | 아이콘2 | 하트(빈)"
+   "ans": "aTAwMiB8IOyVhOydtOy9mDIgfCDtlZjtirgo67mIKQ=="
   },
   {
    "id": "i003",
@@ -237,7 +238,7 @@
    "w": 48,
    "h": 44,
    "file": "assets/icons/i003.png",
-   "ans": "i003 | 아이콘3 | 하트(화살)"
+   "ans": "aTAwMyB8IOyVhOydtOy9mDMgfCDtlZjtirgo7ZmU7IK0KQ=="
   },
   {
    "id": "i004",
@@ -246,7 +247,7 @@
    "w": 37,
    "h": 42,
    "file": "assets/icons/i004.png",
-   "ans": "i004 | 아이콘4 | 반짝이"
+   "ans": "aTAwNCB8IOyVhOydtOy9mDQgfCDrsJjsp53snbQ="
   },
   {
    "id": "i005",
@@ -255,7 +256,7 @@
    "w": 36,
    "h": 41,
    "file": "assets/icons/i005.png",
-   "ans": "i005 | 아이콘5 | 반짝이(작은)"
+   "ans": "aTAwNSB8IOyVhOydtOy9mDUgfCDrsJjsp53snbQo7J6R7J2AKQ=="
   },
   {
    "id": "i006",
@@ -264,7 +265,7 @@
    "w": 42,
    "h": 44,
    "file": "assets/icons/i006.png",
-   "ans": "i006 | 아이콘6 | 다이아(반짝)"
+   "ans": "aTAwNiB8IOyVhOydtOy9mDYgfCDri6TsnbTslYQo67CY7KedKQ=="
   },
   {
    "id": "i007",
@@ -273,7 +274,7 @@
    "w": 38,
    "h": 32,
    "file": "assets/icons/i007.png",
-   "ans": "i007 | 아이콘7 | 다이아몬드"
+   "ans": "aTAwNyB8IOyVhOydtOy9mDcgfCDri6TsnbTslYTrqqzrk5w="
   },
   {
    "id": "i008",
@@ -282,7 +283,7 @@
    "w": 37,
    "h": 37,
    "file": "assets/icons/i008.png",
-   "ans": "i008 | 아이콘8 | 활과 화살"
+   "ans": "aTAwOCB8IOyVhOydtOy9mDggfCDtmZzqs7wg7ZmU7IK0"
   },
   {
    "id": "i009",
@@ -291,7 +292,7 @@
    "w": 42,
    "h": 29,
    "file": "assets/icons/i009.png",
-   "ans": "i009 | 아이콘9 | 행성"
+   "ans": "aTAwOSB8IOyVhOydtOy9mDkgfCDtlonshLE="
   },
   {
    "id": "i010",
@@ -300,7 +301,7 @@
    "w": 36,
    "h": 37,
    "file": "assets/icons/i010.png",
-   "ans": "i010 | 아이콘10 | 로켓"
+   "ans": "aTAxMCB8IOyVhOydtOy9mDEwIHwg66Gc7LyT"
   },
   {
    "id": "i011",
@@ -309,7 +310,7 @@
    "w": 37,
    "h": 41,
    "file": "assets/icons/i011.png",
-   "ans": "i011 | 아이콘11 | 단검"
+   "ans": "aTAxMSB8IOyVhOydtOy9mDExIHwg64uo6rKA"
   },
   {
    "id": "i012",
@@ -318,7 +319,7 @@
    "w": 42,
    "h": 30,
    "file": "assets/icons/i012.png",
-   "ans": "i012 | 아이콘12 | 램프"
+   "ans": "aTAxMiB8IOyVhOydtOy9mDEyIHwg656o7ZSE"
   },
   {
    "id": "i013",
@@ -327,7 +328,7 @@
    "w": 37,
    "h": 41,
    "file": "assets/icons/i013.png",
-   "ans": "i013 | 아이콘13 | 원자"
+   "ans": "aTAxMyB8IOyVhOydtOy9mDEzIHwg7JuQ7J6Q"
   },
   {
    "id": "i014",
@@ -336,7 +337,7 @@
    "w": 35,
    "h": 38,
    "file": "assets/icons/i014.png",
-   "ans": "i014 | 아이콘14 | 외계인"
+   "ans": "aTAxNCB8IOyVhOydtOy9mDE0IHwg7Jm46rOE7J24"
   },
   {
    "id": "i015",
@@ -345,7 +346,7 @@
    "w": 37,
    "h": 38,
    "file": "assets/icons/i015.png",
-   "ans": "i015 | 아이콘15 | 지구"
+   "ans": "aTAxNSB8IOyVhOydtOy9mDE1IHwg7KeA6rWs"
   },
   {
    "id": "i016",
@@ -354,7 +355,7 @@
    "w": 41,
    "h": 37,
    "file": "assets/icons/i016.png",
-   "ans": "i016 | 아이콘16 | 낙타"
+   "ans": "aTAxNiB8IOyVhOydtOy9mDE2IHwg64KZ7YOA"
   },
   {
    "id": "i017",
@@ -363,7 +364,7 @@
    "w": 29,
    "h": 39,
    "file": "assets/icons/i017.png",
-   "ans": "i017 | 아이콘17 | 딱정벌레"
+   "ans": "aTAxNyB8IOyVhOydtOy9mDE3IHwg65Sx7KCV67KM66CI"
   },
   {
    "id": "i018",
@@ -372,7 +373,7 @@
    "w": 42,
    "h": 34,
    "file": "assets/icons/i018.png",
-   "ans": "i018 | 아이콘18 | 리본"
+   "ans": "aTAxOCB8IOyVhOydtOy9mDE4IHwg66as67O4"
   },
   {
    "id": "i019",
@@ -381,7 +382,7 @@
    "w": 37,
    "h": 40,
    "file": "assets/icons/i019.png",
-   "ans": "i019 | 아이콘19 | 열쇠(장식)"
+   "ans": "aTAxOSB8IOyVhOydtOy9mDE5IHwg7Je07IegKOyepeyLnSk="
   },
   {
    "id": "i020",
@@ -390,7 +391,7 @@
    "w": 30,
    "h": 43,
    "file": "assets/icons/i020.png",
-   "ans": "i020 | 아이콘20 | 열쇠"
+   "ans": "aTAyMCB8IOyVhOydtOy9mDIwIHwg7Je07Ieg"
   },
   {
    "id": "i021",
@@ -399,7 +400,7 @@
    "w": 45,
    "h": 36,
    "file": "assets/icons/i021.png",
-   "ans": "i021 | 아이콘21 | 돌고래"
+   "ans": "aTAyMSB8IOyVhOydtOy9mDIxIHwg64+M6rOg656Y"
   },
   {
    "id": "i022",
@@ -408,7 +409,7 @@
    "w": 48,
    "h": 37,
    "file": "assets/icons/i022.png",
-   "ans": "i022 | 아이콘22 | 고래"
+   "ans": "aTAyMiB8IOyVhOydtOy9mDIyIHwg6rOg656Y"
   },
   {
    "id": "i023",
@@ -417,7 +418,7 @@
    "w": 48,
    "h": 30,
    "file": "assets/icons/i023.png",
-   "ans": "i023 | 아이콘23 | 갈매기"
+   "ans": "aTAyMyB8IOyVhOydtOy9mDIzIHwg6rCI66ek6riw"
   },
   {
    "id": "i024",
@@ -426,7 +427,7 @@
    "w": 37,
    "h": 38,
    "file": "assets/icons/i024.png",
-   "ans": "i024 | 아이콘24 | 조개"
+   "ans": "aTAyNCB8IOyVhOydtOy9mDI0IHwg7KGw6rCc"
   },
   {
    "id": "i025",
@@ -435,7 +436,7 @@
    "w": 40,
    "h": 39,
    "file": "assets/icons/i025.png",
-   "ans": "i025 | 아이콘25 | 불가사리"
+   "ans": "aTAyNSB8IOyVhOydtOy9mDI1IHwg67aI6rCA7IKs66as"
   },
   {
    "id": "i026",
@@ -444,7 +445,7 @@
    "w": 34,
    "h": 40,
    "file": "assets/icons/i026.png",
-   "ans": "i026 | 아이콘26 | 모닥불"
+   "ans": "aTAyNiB8IOyVhOydtOy9mDI2IHwg66qo64ul67aI"
   },
   {
    "id": "i027",
@@ -453,7 +454,7 @@
    "w": 37,
    "h": 39,
    "file": "assets/icons/i027.png",
-   "ans": "i027 | 아이콘27 | 히비스커스"
+   "ans": "aTAyNyB8IOyVhOydtOy9mDI3IHwg7Z6I67mE7Iqk7Luk7Iqk"
   },
   {
    "id": "i028",
@@ -462,7 +463,7 @@
    "w": 34,
    "h": 38,
    "file": "assets/icons/i028.png",
-   "ans": "i028 | 아이콘28 | 야자수"
+   "ans": "aTAyOCB8IOyVhOydtOy9mDI4IHwg7JW87J6Q7IiY"
   },
   {
    "id": "i029",
@@ -471,7 +472,7 @@
    "w": 37,
    "h": 45,
    "file": "assets/icons/i029.png",
-   "ans": "i029 | 아이콘29 | 장미"
+   "ans": "aTAyOSB8IOyVhOydtOy9mDI5IHwg7J6l66+4"
   },
   {
    "id": "i030",
@@ -480,7 +481,7 @@
    "w": 39,
    "h": 37,
    "file": "assets/icons/i030.png",
-   "ans": "i030 | 아이콘30 | 벚꽃"
+   "ans": "aTAzMCB8IOyVhOydtOy9mDMwIHwg67Ka6r2D"
   },
   {
    "id": "i031",
@@ -489,7 +490,7 @@
    "w": 40,
    "h": 40,
    "file": "assets/icons/i031.png",
-   "ans": "i031 | 아이콘31 | 조타륜"
+   "ans": "aTAzMSB8IOyVhOydtOy9mDMxIHwg7KGw7YOA66Wc"
   },
   {
    "id": "i032",
@@ -498,7 +499,7 @@
    "w": 38,
    "h": 39,
    "file": "assets/icons/i032.png",
-   "ans": "i032 | 아이콘32 | 닻"
+   "ans": "aTAzMiB8IOyVhOydtOy9mDMyIHwg64u7"
   },
   {
    "id": "i033",
@@ -507,7 +508,7 @@
    "w": 27,
    "h": 43,
    "file": "assets/icons/i033.png",
-   "ans": "i033 | 아이콘33 | 번개"
+   "ans": "aTAzMyB8IOyVhOydtOy9mDMzIHwg67KI6rCc"
   },
   {
    "id": "i034",
@@ -516,7 +517,7 @@
    "w": 37,
    "h": 39,
    "file": "assets/icons/i034.png",
-   "ans": "i034 | 아이콘34 | 비구름"
+   "ans": "aTAzNCB8IOyVhOydtOy9mDM0IHwg67mE6rWs66aE"
   },
   {
    "id": "i035",
@@ -525,7 +526,7 @@
    "w": 43,
    "h": 32,
    "file": "assets/icons/i035.png",
-   "ans": "i035 | 아이콘35 | 구름"
+   "ans": "aTAzNSB8IOyVhOydtOy9mDM1IHwg6rWs66aE"
   },
   {
    "id": "i036",
@@ -534,7 +535,7 @@
    "w": 36,
    "h": 39,
    "file": "assets/icons/i036.png",
-   "ans": "i036 | 아이콘36 | 달과 별"
+   "ans": "aTAzNiB8IOyVhOydtOy9mDM2IHwg64us6rO8IOuzhA=="
   },
   {
    "id": "i037",
@@ -543,7 +544,7 @@
    "w": 34,
    "h": 34,
    "file": "assets/icons/i037.png",
-   "ans": "i037 | 아이콘37 | 별(빈)"
+   "ans": "aTAzNyB8IOyVhOydtOy9mDM3IHwg67OEKOu5iCk="
   },
   {
    "id": "i038",
@@ -552,7 +553,7 @@
    "w": 33,
    "h": 36,
    "file": "assets/icons/i038.png",
-   "ans": "i038 | 아이콘38 | 다윗별"
+   "ans": "aTAzOCB8IOyVhOydtOy9mDM4IHwg64uk7JyX67OE"
   },
   {
    "id": "i039",
@@ -561,7 +562,7 @@
    "w": 32,
    "h": 33,
    "file": "assets/icons/i039.png",
-   "ans": "i039 | 아이콘39 | 초승달"
+   "ans": "aTAzOSB8IOyVhOydtOy9mDM5IHwg7LSI7Iq564us"
   },
   {
    "id": "i040",
@@ -570,7 +571,7 @@
    "w": 39,
    "h": 37,
    "file": "assets/icons/i040.png",
-   "ans": "i040 | 아이콘40 | 구름과 달"
+   "ans": "aTA0MCB8IOyVhOydtOy9mDQwIHwg6rWs66aE6rO8IOuLrA=="
   },
   {
    "id": "i041",
@@ -579,7 +580,7 @@
    "w": 41,
    "h": 42,
    "file": "assets/icons/i041.png",
-   "ans": "i041 | 아이콘41 | 카드(스페이드)"
+   "ans": "aTA0MSB8IOyVhOydtOy9mDQxIHwg7Lm065OcKOyKpO2OmOydtOuTnCk="
   },
   {
    "id": "i042",
@@ -588,7 +589,7 @@
    "w": 49,
    "h": 30,
    "file": "assets/icons/i042.png",
-   "ans": "i042 | 아이콘42 | 카드(3장)"
+   "ans": "aTA0MiB8IOyVhOydtOy9mDQyIHwg7Lm065OcKDPsnqUp"
   },
   {
    "id": "i043",
@@ -597,7 +598,7 @@
    "w": 33,
    "h": 37,
    "file": "assets/icons/i043.png",
-   "ans": "i043 | 아이콘43 | 주사위"
+   "ans": "aTA0MyB8IOyVhOydtOy9mDQzIHwg7KO87IKs7JyE"
   },
   {
    "id": "i044",
@@ -606,7 +607,7 @@
    "w": 48,
    "h": 29,
    "file": "assets/icons/i044.png",
-   "ans": "i044 | 아이콘44 | 입술"
+   "ans": "aTA0NCB8IOyVhOydtOy9mDQ0IHwg7J6F7Iig"
   },
   {
    "id": "i045",
@@ -615,7 +616,7 @@
    "w": 19,
    "h": 38,
    "file": "assets/icons/i045.png",
-   "ans": "i045 | 아이콘45 | 립스틱"
+   "ans": "aTA0NSB8IOyVhOydtOy9mDQ1IHwg66a97Iqk7Yux"
   },
   {
    "id": "i046",
@@ -624,7 +625,7 @@
    "w": 35,
    "h": 34,
    "file": "assets/icons/i046.png",
-   "ans": "i046 | 아이콘46 | 럭비공"
+   "ans": "aTA0NiB8IOyVhOydtOy9mDQ2IHwg65+t67mE6rO1"
   },
   {
    "id": "i047",
@@ -633,7 +634,7 @@
    "w": 37,
    "h": 37,
    "file": "assets/icons/i047.png",
-   "ans": "i047 | 아이콘47 | 돋보기"
+   "ans": "aTA0NyB8IOyVhOydtOy9mDQ3IHwg64+L67O06riw"
   },
   {
    "id": "i048",
@@ -642,7 +643,7 @@
    "w": 37,
    "h": 38,
    "file": "assets/icons/i048.png",
-   "ans": "i048 | 아이콘48 | 야구"
+   "ans": "aTA0OCB8IOyVhOydtOy9mDQ4IHwg7JW86rWs"
   },
   {
    "id": "i049",
@@ -651,7 +652,7 @@
    "w": 33,
    "h": 37,
    "file": "assets/icons/i049.png",
-   "ans": "i049 | 아이콘49 | 클래퍼보드"
+   "ans": "aTA0OSB8IOyVhOydtOy9mDQ5IHwg7YG0656Y7Y2867O065Oc"
   },
   {
    "id": "i050",
@@ -660,7 +661,7 @@
    "w": 42,
    "h": 30,
    "file": "assets/icons/i050.png",
-   "ans": "i050 | 아이콘50 | 티켓"
+   "ans": "aTA1MCB8IOyVhOydtOy9mDUwIHwg7Yuw7LyT"
   },
   {
    "id": "i051",
@@ -669,7 +670,7 @@
    "w": 37,
    "h": 42,
    "file": "assets/icons/i051.png",
-   "ans": "i051 | 아이콘51 | 탁구"
+   "ans": "aTA1MSB8IOyVhOydtOy9mDUxIHwg7YOB6rWs"
   },
   {
    "id": "i052",
@@ -678,7 +679,7 @@
    "w": 37,
    "h": 37,
    "file": "assets/icons/i052.png",
-   "ans": "i052 | 아이콘52 | 축구공"
+   "ans": "aTA1MiB8IOyVhOydtOy9mDUyIHwg7LaV6rWs6rO1"
   },
   {
    "id": "i053",
@@ -687,7 +688,7 @@
    "w": 37,
    "h": 37,
    "file": "assets/icons/i053.png",
-   "ans": "i053 | 아이콘53 | 배구공"
+   "ans": "aTA1MyB8IOyVhOydtOy9mDUzIHwg67Cw6rWs6rO1"
   },
   {
    "id": "i054",
@@ -696,7 +697,7 @@
    "w": 42,
    "h": 42,
    "file": "assets/icons/i054.png",
-   "ans": "i054 | 아이콘54 | 과녁"
+   "ans": "aTA1NCB8IOyVhOydtOy9mDU0IHwg6rO864WB"
   },
   {
    "id": "i055",
@@ -705,7 +706,7 @@
    "w": 30,
    "h": 41,
    "file": "assets/icons/i055.png",
-   "ans": "i055 | 아이콘55 | 메달"
+   "ans": "aTA1NSB8IOyVhOydtOy9mDU1IHwg66mU64us"
   },
   {
    "id": "i056",
@@ -714,7 +715,7 @@
    "w": 37,
    "h": 37,
    "file": "assets/icons/i056.png",
-   "ans": "i056 | 아이콘56 | 펜"
+   "ans": "aTA1NiB8IOyVhOydtOy9mDU2IHwg7Y6c"
   },
   {
    "id": "i057",
@@ -723,7 +724,7 @@
    "w": 45,
    "h": 20,
    "file": "assets/icons/i057.png",
-   "ans": "i057 | 아이콘57 | 콧수염"
+   "ans": "aTA1NyB8IOyVhOydtOy9mDU3IHwg7L2n7IiY7Je8"
   },
   {
    "id": "i058",
@@ -732,7 +733,7 @@
    "w": 37,
    "h": 36,
    "file": "assets/icons/i058.png",
-   "ans": "i058 | 아이콘58 | 왕관"
+   "ans": "aTA1OCB8IOyVhOydtOy9mDU4IHwg7JmV6rSA"
   },
   {
    "id": "i059",
@@ -741,7 +742,7 @@
    "w": 39,
    "h": 37,
    "file": "assets/icons/i059.png",
-   "ans": "i059 | 아이콘59 | 칵테일"
+   "ans": "aTA1OSB8IOyVhOydtOy9mDU5IHwg7Lm17YWM7J28"
   },
   {
    "id": "i060",
@@ -750,7 +751,7 @@
    "w": 31,
    "h": 37,
    "file": "assets/icons/i060.png",
-   "ans": "i060 | 아이콘60 | 심장"
+   "ans": "aTA2MCB8IOyVhOydtOy9mDYwIHwg7Ius7J6l"
   },
   {
    "id": "i061",
@@ -759,7 +760,7 @@
    "w": 40,
    "h": 40,
    "file": "assets/icons/i061.png",
-   "ans": "i061 | 아이콘61 | 수갑"
+   "ans": "aTA2MSB8IOyVhOydtOy9mDYxIHwg7IiY6rCR"
   },
   {
    "id": "i062",
@@ -768,7 +769,7 @@
    "w": 40,
    "h": 36,
    "file": "assets/icons/i062.png",
-   "ans": "i062 | 아이콘62 | 권총"
+   "ans": "aTA2MiB8IOyVhOydtOy9mDYyIHwg6raM7LSd"
   },
   {
    "id": "i063",
@@ -777,7 +778,7 @@
    "w": 35,
    "h": 45,
    "file": "assets/icons/i063.png",
-   "ans": "i063 | 아이콘63 | 플라스크"
+   "ans": "aTA2MyB8IOyVhOydtOy9mDYzIHwg7ZSM65287Iqk7YGs"
   },
   {
    "id": "i064",
@@ -786,7 +787,7 @@
    "w": 40,
    "h": 42,
    "file": "assets/icons/i064.png",
-   "ans": "i064 | 아이콘64 | 해골"
+   "ans": "aTA2NCB8IOyVhOydtOy9mDY0IHwg7ZW06rOo"
   },
   {
    "id": "i065",
@@ -795,7 +796,7 @@
    "w": 31,
    "h": 43,
    "file": "assets/icons/i065.png",
-   "ans": "i065 | 아이콘65 | 폭탄"
+   "ans": "aTA2NSB8IOyVhOydtOy9mDY1IHwg7Y+t7YOE"
   },
   {
    "id": "i066",
@@ -804,7 +805,7 @@
    "w": 40,
    "h": 40,
    "file": "assets/icons/i066.png",
-   "ans": "i066 | 아이콘66 | CD"
+   "ans": "aTA2NiB8IOyVhOydtOy9mDY2IHwgQ0Q="
   },
   {
    "id": "i067",
@@ -813,7 +814,7 @@
    "w": 38,
    "h": 33,
    "file": "assets/icons/i067.png",
-   "ans": "i067 | 아이콘67 | 피아노"
+   "ans": "aTA2NyB8IOyVhOydtOy9mDY3IHwg7ZS87JWE64W4"
   },
   {
    "id": "i068",
@@ -822,7 +823,7 @@
    "w": 46,
    "h": 33,
    "file": "assets/icons/i068.png",
-   "ans": "i068 | 아이콘68 | 카세트"
+   "ans": "aTA2OCB8IOyVhOydtOy9mDY4IHwg7Lm07IS47Yq4"
   },
   {
    "id": "i069",
@@ -831,7 +832,7 @@
    "w": 36,
    "h": 42,
    "file": "assets/icons/i069.png",
-   "ans": "i069 | 아이콘69 | 스노우볼"
+   "ans": "aTA2OSB8IOyVhOydtOy9mDY5IHwg7Iqk64W47Jqw67O8"
   },
   {
    "id": "i070",
@@ -840,7 +841,7 @@
    "w": 37,
    "h": 42,
    "file": "assets/icons/i070.png",
-   "ans": "i070 | 아이콘70 | 진저브레드"
+   "ans": "aTA3MCB8IOyVhOydtOy9mDcwIHwg7KeE7KCA67iM66CI65Oc"
   },
   {
    "id": "i071",
@@ -849,7 +850,7 @@
    "w": 26,
    "h": 44,
    "file": "assets/icons/i071.png",
-   "ans": "i071 | 아이콘71 | 음표"
+   "ans": "aTA3MSB8IOyVhOydtOy9mDcxIHwg7J2M7ZGc"
   },
   {
    "id": "i072",
@@ -858,7 +859,7 @@
    "w": 41,
    "h": 41,
    "file": "assets/icons/i072.png",
-   "ans": "i072 | 아이콘72 | 기타"
+   "ans": "aTA3MiB8IOyVhOydtOy9mDcyIHwg6riw7YOA"
   },
   {
    "id": "i073",
@@ -867,7 +868,7 @@
    "w": 35,
    "h": 41,
    "file": "assets/icons/i073.png",
-   "ans": "i073 | 아이콘73 | 드럼"
+   "ans": "aTA3MyB8IOyVhOydtOy9mDczIHwg65Oc65+8"
   },
   {
    "id": "i074",
@@ -876,7 +877,7 @@
    "w": 38,
    "h": 34,
    "file": "assets/icons/i074.png",
-   "ans": "i074 | 아이콘74 | 냄비"
+   "ans": "aTA3NCB8IOyVhOydtOy9mDc0IHwg64OE67mE"
   },
   {
    "id": "i075",
@@ -885,7 +886,7 @@
    "w": 42,
    "h": 42,
    "file": "assets/icons/i075.png",
-   "ans": "i075 | 아이콘75 | 엠블럼"
+   "ans": "aTA3NSB8IOyVhOydtOy9mDc1IHwg7Jeg67iU65+8"
   },
   {
    "id": "i076",
@@ -894,7 +895,7 @@
    "w": 37,
    "h": 38,
    "file": "assets/icons/i076.png",
-   "ans": "i076 | 아이콘76 | 오렌지"
+   "ans": "aTA3NiB8IOyVhOydtOy9mDc2IHwg7Jik66CM7KeA"
   },
   {
    "id": "i077",
@@ -903,7 +904,7 @@
    "w": 40,
    "h": 37,
    "file": "assets/icons/i077.png",
-   "ans": "i077 | 아이콘77 | 레몬"
+   "ans": "aTA3NyB8IOyVhOydtOy9mDc3IHwg66CI66qs"
   },
   {
    "id": "i078",
@@ -912,7 +913,7 @@
    "w": 37,
    "h": 42,
    "file": "assets/icons/i078.png",
-   "ans": "i078 | 아이콘78 | 바나나"
+   "ans": "aTA3OCB8IOyVhOydtOy9mDc4IHwg67CU64KY64KY"
   },
   {
    "id": "i079",
@@ -921,7 +922,7 @@
    "w": 38,
    "h": 42,
    "file": "assets/icons/i079.png",
-   "ans": "i079 | 아이콘79 | 사과"
+   "ans": "aTA3OSB8IOyVhOydtOy9mDc5IHwg7IKs6rO8"
   },
   {
    "id": "i080",
@@ -930,7 +931,7 @@
    "w": 37,
    "h": 45,
    "file": "assets/icons/i080.png",
-   "ans": "i080 | 아이콘80 | 복숭아"
+   "ans": "aTA4MCB8IOyVhOydtOy9mDgwIHwg67O17Iit7JWE"
   },
   {
    "id": "i081",
@@ -939,7 +940,7 @@
    "w": 42,
    "h": 38,
    "file": "assets/icons/i081.png",
-   "ans": "i081 | 아이콘81 | 고양이"
+   "ans": "aTA4MSB8IOyVhOydtOy9mDgxIHwg6rOg7JaR7J20"
   },
   {
    "id": "i082",
@@ -948,7 +949,7 @@
    "w": 40,
    "h": 39,
    "file": "assets/icons/i082.png",
-   "ans": "i082 | 아이콘82 | 쥐"
+   "ans": "aTA4MiB8IOyVhOydtOy9mDgyIHwg7KWQ"
   },
   {
    "id": "i083",
@@ -957,7 +958,7 @@
    "w": 45,
    "h": 39,
    "file": "assets/icons/i083.png",
-   "ans": "i083 | 아이콘83 | 강아지"
+   "ans": "aTA4MyB8IOyVhOydtOy9mDgzIHwg6rCV7JWE7KeA"
   },
   {
    "id": "i084",
@@ -966,7 +967,7 @@
    "w": 38,
    "h": 39,
    "file": "assets/icons/i084.png",
-   "ans": "i084 | 아이콘84 | 강아지(테리어)"
+   "ans": "aTA4NCB8IOyVhOydtOy9mDg0IHwg6rCV7JWE7KeAKO2FjOumrOyWtCk="
   },
   {
    "id": "i085",
@@ -975,7 +976,7 @@
    "w": 38,
    "h": 36,
    "file": "assets/icons/i085.png",
-   "ans": "i085 | 아이콘85 | 곰"
+   "ans": "aTA4NSB8IOyVhOydtOy9mDg1IHwg6rOw"
   },
   {
    "id": "i086",
@@ -984,7 +985,7 @@
    "w": 39,
    "h": 37,
    "file": "assets/icons/i086.png",
-   "ans": "i086 | 아이콘86 | 판다"
+   "ans": "aTA4NiB8IOyVhOydtOy9mDg2IHwg7YyQ64uk"
   },
   {
    "id": "i087",
@@ -993,7 +994,7 @@
    "w": 32,
    "h": 41,
    "file": "assets/icons/i087.png",
-   "ans": "i087 | 아이콘87 | 토끼"
+   "ans": "aTA4NyB8IOyVhOydtOy9mDg3IHwg7Yag64G8"
   },
   {
    "id": "i088",
@@ -1002,7 +1003,7 @@
    "w": 42,
    "h": 39,
    "file": "assets/icons/i088.png",
-   "ans": "i088 | 아이콘88 | 사자"
+   "ans": "aTA4OCB8IOyVhOydtOy9mDg4IHwg7IKs7J6Q"
   },
   {
    "id": "i089",
@@ -1011,7 +1012,7 @@
    "w": 43,
    "h": 38,
    "file": "assets/icons/i089.png",
-   "ans": "i089 | 아이콘89 | 젖소"
+   "ans": "aTA4OSB8IOyVhOydtOy9mDg5IHwg7KCW7IaM"
   },
   {
    "id": "i090",
@@ -1020,7 +1021,7 @@
    "w": 34,
    "h": 38,
    "file": "assets/icons/i090.png",
-   "ans": "i090 | 아이콘90 | 강아지(불독)"
+   "ans": "aTA5MCB8IOyVhOydtOy9mDkwIHwg6rCV7JWE7KeAKOu2iOuPhSk="
   },
   {
    "id": "i091",
@@ -1029,7 +1030,7 @@
    "w": 40,
    "h": 36,
    "file": "assets/icons/i091.png",
-   "ans": "i091 | 아이콘91 | 개구리"
+   "ans": "aTA5MSB8IOyVhOydtOy9mDkxIHwg6rCc6rWs66as"
   },
   {
    "id": "i092",
@@ -1038,7 +1039,7 @@
    "w": 41,
    "h": 34,
    "file": "assets/icons/i092.png",
-   "ans": "i092 | 아이콘92 | 원숭이"
+   "ans": "aTA5MiB8IOyVhOydtOy9mDkyIHwg7JuQ7Iit7J20"
   },
   {
    "id": "i093",
@@ -1047,7 +1048,7 @@
    "w": 47,
    "h": 35,
    "file": "assets/icons/i093.png",
-   "ans": "i093 | 아이콘93 | 코알라"
+   "ans": "aTA5MyB8IOyVhOydtOy9mDkzIHwg7L2U7JWM6528"
   },
   {
    "id": "i094",
@@ -1056,7 +1057,7 @@
    "w": 39,
    "h": 40,
    "file": "assets/icons/i094.png",
-   "ans": "i094 | 아이콘94 | 양"
+   "ans": "aTA5NCB8IOyVhOydtOy9mDk0IHwg7JaR"
   },
   {
    "id": "i095",
@@ -1065,7 +1066,7 @@
    "w": 40,
    "h": 34,
    "file": "assets/icons/i095.png",
-   "ans": "i095 | 아이콘95 | 발자국"
+   "ans": "aTA5NSB8IOyVhOydtOy9mDk1IHwg67Cc7J6Q6rWt"
   },
   {
    "id": "i096",
@@ -1074,7 +1075,7 @@
    "w": 27,
    "h": 44,
    "file": "assets/icons/i096.png",
-   "ans": "i096 | 아이콘96 | 말"
+   "ans": "aTA5NiB8IOyVhOydtOy9mDk2IHwg66eQ"
   },
   {
    "id": "i097",
@@ -1083,7 +1084,7 @@
    "w": 30,
    "h": 42,
    "file": "assets/icons/i097.png",
-   "ans": "i097 | 아이콘97 | 토끼(서기)"
+   "ans": "aTA5NyB8IOyVhOydtOy9mDk3IHwg7Yag64G8KOyEnOq4sCk="
   },
   {
    "id": "i098",
@@ -1092,7 +1093,7 @@
    "w": 43,
    "h": 34,
    "file": "assets/icons/i098.png",
-   "ans": "i098 | 아이콘98 | 고슴도치"
+   "ans": "aTA5OCB8IOyVhOydtOy9mDk4IHwg6rOg7Iq064+E7LmY"
   },
   {
    "id": "i099",
@@ -1101,7 +1102,7 @@
    "w": 41,
    "h": 37,
    "file": "assets/icons/i099.png",
-   "ans": "i099 | 아이콘99 | 투칸"
+   "ans": "aTA5OSB8IOyVhOydtOy9mDk5IHwg7Yis7Lm4"
   },
   {
    "id": "i100",
@@ -1110,7 +1111,7 @@
    "w": 47,
    "h": 38,
    "file": "assets/icons/i100.png",
-   "ans": "i100 | 아이콘100 | 유니콘"
+   "ans": "aTEwMCB8IOyVhOydtOy9mDEwMCB8IOycoOuLiOy9mA=="
   },
   {
    "id": "i101",
@@ -1119,7 +1120,7 @@
    "w": 164,
    "h": 18,
    "file": "assets/icons/i101.png",
-   "ans": "i101 | [아이콘 101] | 룸넘버 라인"
+   "ans": "aTEwMSB8IFvslYTsnbTsvZggMTAxXSB8IOujuOuEmOuyhCDrnbzsnbg="
   },
   {
    "id": "i102",
@@ -1128,7 +1129,7 @@
    "w": 164,
    "h": 10,
    "file": "assets/icons/i102.png",
-   "ans": "i102 | [아이콘 102] | 실선"
+   "ans": "aTEwMiB8IFvslYTsnbTsvZggMTAyXSB8IOyLpOyEoA=="
   },
   {
    "id": "i103",
@@ -1137,7 +1138,7 @@
    "w": 164,
    "h": 15,
    "file": "assets/icons/i103.png",
-   "ans": "i103 | [아이콘 103] | 두 줄 실선"
+   "ans": "aTEwMyB8IFvslYTsnbTsvZggMTAzXSB8IOuRkCDspIQg7Iuk7ISg"
   },
   {
    "id": "i104",
@@ -1146,7 +1147,7 @@
    "w": 161,
    "h": 24,
    "file": "assets/icons/i104.png",
-   "ans": "i104 | [아이콘 104] | 다이아 도형"
+   "ans": "aTEwNCB8IFvslYTsnbTsvZggMTA0XSB8IOuLpOydtOyVhCDrj4TtmJU="
   },
   {
    "id": "i105",
@@ -1155,7 +1156,7 @@
    "w": 163,
    "h": 24,
    "file": "assets/icons/i105.png",
-   "ans": "i105 | [아이콘 105] | 하트 5(빈)"
+   "ans": "aTEwNSB8IFvslYTsnbTsvZggMTA1XSB8IO2VmO2KuCA1KOu5iCk="
   },
   {
    "id": "i106",
@@ -1164,7 +1165,7 @@
    "w": 162,
    "h": 23,
    "file": "assets/icons/i106.png",
-   "ans": "i106 | [아이콘 106] | 하트 5(채움)"
+   "ans": "aTEwNiB8IFvslYTsnbTsvZggMTA2XSB8IO2VmO2KuCA1KOyxhOybgCk="
   },
   {
    "id": "i107",
@@ -1173,7 +1174,7 @@
    "w": 164,
    "h": 27,
    "file": "assets/icons/i107.png",
-   "ans": "i107 | [아이콘 107] | 별 5(빈)"
+   "ans": "aTEwNyB8IFvslYTsnbTsvZggMTA3XSB8IOuzhCA1KOu5iCk="
   },
   {
    "id": "i108",
@@ -1182,7 +1183,7 @@
    "w": 162,
    "h": 25,
    "file": "assets/icons/i108.png",
-   "ans": "i108 | [아이콘 108] | 별 5(채움)"
+   "ans": "aTEwOCB8IFvslYTsnbTsvZggMTA4XSB8IOuzhCA1KOyxhOybgCk="
   },
   {
    "id": "i201",
@@ -1191,7 +1192,7 @@
    "w": 44,
    "h": 50,
    "file": "assets/icons/i201.png",
-   "ans": "i201 | 아이콘201 | 오너먼트"
+   "ans": "aTIwMSB8IOyVhOydtOy9mDIwMSB8IOyYpOuEiOuovO2KuA=="
   },
   {
    "id": "i202",
@@ -1200,7 +1201,7 @@
    "w": 45,
    "h": 50,
    "file": "assets/icons/i202.png",
-   "ans": "i202 | 아이콘202 | 트리"
+   "ans": "aTIwMiB8IOyVhOydtOy9mDIwMiB8IO2KuOumrA=="
   },
   {
    "id": "i203",
@@ -1209,7 +1210,7 @@
    "w": 49,
    "h": 52,
    "file": "assets/icons/i203.png",
-   "ans": "i203 | 아이콘203 | 눈사람"
+   "ans": "aTIwMyB8IOyVhOydtOy9mDIwMyB8IOuIiOyCrOuejA=="
   },
   {
    "id": "i204",
@@ -1218,7 +1219,7 @@
    "w": 52,
    "h": 44,
    "file": "assets/icons/i204.png",
-   "ans": "i204 | 아이콘204 | 종"
+   "ans": "aTIwNCB8IOyVhOydtOy9mDIwNCB8IOyihQ=="
   },
   {
    "id": "i205",
@@ -1227,7 +1228,7 @@
    "w": 39,
    "h": 50,
    "file": "assets/icons/i205.png",
-   "ans": "i205 | 아이콘205 | 캔디케인"
+   "ans": "aTIwNSB8IOyVhOydtOy9mDIwNSB8IOy6lOuUlOy8gOyduA=="
   },
   {
    "id": "i206",
@@ -1236,7 +1237,7 @@
    "w": 46,
    "h": 51,
    "file": "assets/icons/i206.png",
-   "ans": "i206 | 아이콘206 | 루돌프"
+   "ans": "aTIwNiB8IOyVhOydtOy9mDIwNiB8IOujqOuPjO2UhA=="
   },
   {
    "id": "i207",
@@ -1245,7 +1246,7 @@
    "w": 45,
    "h": 50,
    "file": "assets/icons/i207.png",
-   "ans": "i207 | 아이콘207 | 눈송이"
+   "ans": "aTIwNyB8IOyVhOydtOy9mDIwNyB8IOuIiOyGoeydtA=="
   },
   {
    "id": "i208",
@@ -1254,7 +1255,7 @@
    "w": 35,
    "h": 57,
    "file": "assets/icons/i208.png",
-   "ans": "i208 | 아이콘208 | 눈사람(단순)"
+   "ans": "aTIwOCB8IOyVhOydtOy9mDIwOCB8IOuIiOyCrOuejCjri6jsiJwp"
   },
   {
    "id": "i209",
@@ -1263,7 +1264,7 @@
    "w": 50,
    "h": 40,
    "file": "assets/icons/i209.png",
-   "ans": "i209 | 아이콘209 | 홀리"
+   "ans": "aTIwOSB8IOyVhOydtOy9mDIwOSB8IO2ZgOumrA=="
   },
   {
    "id": "i210",
@@ -1272,7 +1273,7 @@
    "w": 48,
    "h": 45,
    "file": "assets/icons/i210.png",
-   "ans": "i210 | 아이콘210 | 종(홀리)"
+   "ans": "aTIxMCB8IOyVhOydtOy9mDIxMCB8IOyihSjtmYDrpqwp"
   },
   {
    "id": "i211",
@@ -1281,7 +1282,7 @@
    "w": 45,
    "h": 46,
    "file": "assets/icons/i211.png",
-   "ans": "i211 | 아이콘211 | 스노클링"
+   "ans": "aTIxMSB8IOyVhOydtOy9mDIxMSB8IOyKpOuFuO2BtOungQ=="
   },
   {
    "id": "i212",
@@ -1290,7 +1291,7 @@
    "w": 51,
    "h": 38,
    "file": "assets/icons/i212.png",
-   "ans": "i212 | 아이콘212 | 스키 고글"
+   "ans": "aTIxMiB8IOyVhOydtOy9mDIxMiB8IOyKpO2CpCDqs6DquIA="
   },
   {
    "id": "i213",
@@ -1299,7 +1300,7 @@
    "w": 31,
    "h": 53,
    "file": "assets/icons/i213.png",
-   "ans": "i213 | 아이콘213 | 볼링핀"
+   "ans": "aTIxMyB8IOyVhOydtOy9mDIxMyB8IOuzvOunge2VgA=="
   },
   {
    "id": "i214",
@@ -1308,7 +1309,7 @@
    "w": 51,
    "h": 48,
    "file": "assets/icons/i214.png",
-   "ans": "i214 | 아이콘214 | 조개(진주)"
+   "ans": "aTIxNCB8IOyVhOydtOy9mDIxNCB8IOyhsOqwnCjsp4Tso7wp"
   },
   {
    "id": "i215",
@@ -1317,7 +1318,7 @@
    "w": 45,
    "h": 45,
    "file": "assets/icons/i215.png",
-   "ans": "i215 | 아이콘215 | 야구공"
+   "ans": "aTIxNSB8IOyVhOydtOy9mDIxNSB8IOyVvOq1rOqztQ=="
   },
   {
    "id": "i216",
@@ -1326,7 +1327,7 @@
    "w": 51,
    "h": 50,
    "file": "assets/icons/i216.png",
-   "ans": "i216 | 아이콘216 | 테니스"
+   "ans": "aTIxNiB8IOyVhOydtOy9mDIxNiB8IO2FjOuLiOyKpA=="
   },
   {
    "id": "i217",
@@ -1335,7 +1336,7 @@
    "w": 48,
    "h": 50,
    "file": "assets/icons/i217.png",
-   "ans": "i217 | 아이콘217 | 셔틀콕"
+   "ans": "aTIxNyB8IOyVhOydtOy9mDIxNyB8IOyFlO2LgOy9lQ=="
   },
   {
    "id": "i218",
@@ -1344,7 +1345,7 @@
    "w": 50,
    "h": 51,
    "file": "assets/icons/i218.png",
-   "ans": "i218 | 아이콘218 | 골프 깃발"
+   "ans": "aTIxOCB8IOyVhOydtOy9mDIxOCB8IOqzqO2UhCDquYPrsJw="
   },
   {
    "id": "i219",
@@ -1353,7 +1354,7 @@
    "w": 51,
    "h": 49,
    "file": "assets/icons/i219.png",
-   "ans": "i219 | 아이콘219 | 골프채"
+   "ans": "aTIxOSB8IOyVhOydtOy9mDIxOSB8IOqzqO2UhOyxhA=="
   },
   {
    "id": "i220",
@@ -1362,7 +1363,7 @@
    "w": 40,
    "h": 51,
    "file": "assets/icons/i220.png",
-   "ans": "i220 | 아이콘220 | 골프 그린"
+   "ans": "aTIyMCB8IOyVhOydtOy9mDIyMCB8IOqzqO2UhCDqt7jrprA="
   },
   {
    "id": "i221",
@@ -1371,7 +1372,7 @@
    "w": 53,
    "h": 37,
    "file": "assets/icons/i221.png",
-   "ans": "i221 | 아이콘221 | 텐트"
+   "ans": "aTIyMSB8IOyVhOydtOy9mDIyMSB8IO2FkO2KuA=="
   },
   {
    "id": "i222",
@@ -1380,7 +1381,7 @@
    "w": 51,
    "h": 40,
    "file": "assets/icons/i222.png",
-   "ans": "i222 | 아이콘222 | 텐트(삼각)"
+   "ans": "aTIyMiB8IOyVhOydtOy9mDIyMiB8IO2FkO2KuCjsgrzqsIEp"
   },
   {
    "id": "i223",
@@ -1389,7 +1390,7 @@
    "w": 35,
    "h": 53,
    "file": "assets/icons/i223.png",
-   "ans": "i223 | 아이콘223 | 복싱"
+   "ans": "aTIyMyB8IOyVhOydtOy9mDIyMyB8IOuzteyLsQ=="
   },
   {
    "id": "i224",
@@ -1398,7 +1399,7 @@
    "w": 39,
    "h": 46,
    "file": "assets/icons/i224.png",
-   "ans": "i224 | 아이콘224 | 설탕해골"
+   "ans": "aTIyNCB8IOyVhOydtOy9mDIyNCB8IOyEpO2Dle2VtOqzqA=="
   }
  ],
  "groups": [
@@ -1423,19 +1424,19 @@
    "key": "white",
    "label": "화이트",
    "swatch": "#f7f4ec",
-   "ans": "화이트 (흰펄각인)"
+   "ans": "7ZmU7J207Yq4ICjtnbDtjoTqsIHsnbgp"
   },
   {
    "key": "gold",
    "label": "골드",
    "swatch": "#c9a86a",
-   "ans": "골드 (골드각인)"
+   "ans": "6rOo65OcICjqs6jrk5zqsIHsnbgp"
   },
   {
    "key": "silver",
    "label": "실버",
    "swatch": "#c4c8cd",
-   "ans": "실버 (실버각인)"
+   "ans": "7Iuk67KEICjsi6TrsoTqsIHsnbgp"
   }
  ],
  "styles": [
@@ -1443,25 +1444,25 @@
    "key": "classic",
    "label": "클래식",
    "sample": "Aa",
-   "ans": "클래식(세리프)"
+   "ans": "7YG0656Y7IudKOyEuOumrO2UhCk="
   },
   {
    "key": "modern",
    "label": "모던",
    "sample": "Aa",
-   "ans": "모던(고딕)"
+   "ans": "66qo642YKOqzoOuUlSk="
   },
   {
    "key": "hand",
    "label": "손글씨",
    "sample": "Aa",
-   "ans": "귀여운 손글씨"
+   "ans": "6reA7Jes7Jq0IOyGkOq4gOyUqA=="
   },
   {
    "key": "any",
    "label": "상관없음",
    "sample": "Aa",
-   "ans": "상관없음"
+   "ans": "7IOB6rSA7JeG7J2M"
   }
  ],
  "form": {
