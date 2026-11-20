@@ -579,7 +579,7 @@
       family = '"Cormorant Garamond", "Noto Serif KR", serif';
       weight = '600';
     }
-    let size = styleKey === 'hand' ? 82 : latin ? 88 : 68;
+    let size = styleKey === 'hand' ? 84 : latin ? 92 : 72;
     letterSpacing(ctx, latin ? 3 : 0);
     setFont(ctx, `${weight} ${size}px ${family}`);
     const maxW = W - 190;
@@ -616,7 +616,7 @@
         if (img.decode) { await img.decode(); } else {
           await new Promise((res, rej) => { img.onload = res; img.onerror = rej; });
         }
-        const box = mr * 1.18;
+        const box = mr * 1.42;
         const k = Math.min(box / img.naturalWidth, box / img.naturalHeight);
         const dw = img.naturalWidth * k, dh = img.naturalHeight * k;
         ctx.drawImage(img, W / 2 - dw / 2, my - dh / 2, dw, dh);
