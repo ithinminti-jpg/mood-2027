@@ -698,6 +698,25 @@
     $('#againBtn').addEventListener('click', resetAll);
 
     update();
+    applyDemo();
+  }
+
+  /* 미리보기용: 주소에 ?demo=1 을 붙이면 완성 예시가 채워진 카드를 보여줍니다 (전송과 무관) */
+  function applyDemo() {
+    const params = new URLSearchParams(location.search);
+    const demo = params.get('demo');
+    if (!demo) return;
+    const hand = demo === '2';
+    const nameEl = $('#inputName'), kwEl = $('#inputKeyword');
+    nameEl.value = '선혜'; state.name = '선혜';
+    kwEl.value = hand ? '양껏 행복하자' : 'LUCKY 2027';
+    state.keyword = kwEl.value;
+    selectColor(hand ? 'c22' : 'c05');
+    const pointBtn = document.querySelector(`.point[data-key="${hand ? 'white' : 'silver'}"]`);
+    if (pointBtn) pointBtn.click();
+    selectIcon('i094');
+    const styleBtn = document.querySelector(`.style[data-key="${hand ? 'hand' : 'classic'}"]`);
+    if (styleBtn) styleBtn.click();
   }
 
   document.addEventListener('DOMContentLoaded', boot);
