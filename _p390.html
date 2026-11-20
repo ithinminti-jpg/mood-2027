@@ -10,13 +10,13 @@ iframe{display:block;width:390px;height:880px;border:0;background:#07080c}
 </style>
 </head>
 <body>
-<iframe id="f" src="index.html?v=20271120g"></iframe>
+<iframe id="f" src="index.html?v=20271120h"></iframe>
 <script>
 const p = new URLSearchParams(location.search);
 const demo = p.get('demo');
 const y = Number(p.get('y') || 0);
 const f = document.getElementById('f');
-if (demo) f.src = 'index.html?v=20271120g&demo=' + encodeURIComponent(demo);
+if (demo) f.src = 'index.html?v=20271120h&demo=' + encodeURIComponent(demo);
 f.addEventListener('load', () => {
   const w = f.contentWindow;
   const dy = y || Number(p.get('sel') ? 0 : 0);
