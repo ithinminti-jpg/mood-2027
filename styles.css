@@ -158,10 +158,9 @@ main,header,footer,.dock{position:relative;z-index:1}
 .hero h1 em::after{
   content:'';
   position:absolute;
-  left:1px; right:1px; bottom:1px;
-  height:7px;
-  background:linear-gradient(90deg, rgba(217,184,119,.06), rgba(217,184,119,.34), rgba(217,184,119,.06));
-  border-radius:4px;
+  left:0; right:0; bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg, rgba(217,184,119,0), rgba(217,184,119,.55), rgba(217,184,119,0));
   z-index:-1;
 }
 .hero .sub{
@@ -659,7 +658,11 @@ main,header,footer,.dock{position:relative;z-index:1}
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
   text-align:center;
+}
+@media (max-height:680px){
+  .done-inner{justify-content:flex-start}
 }
 .done-eyebrow{
   margin:0 0 10px;
