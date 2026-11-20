@@ -176,8 +176,12 @@
       if (badge) badge.textContent = pos >= 0 ? String(pos + 1) : '';
     });
 
-    if (removed && kind === 'art') notice('artHint', `‘${ICONS.get(removed).name}’ 대신 ‘${ICONS.get(id).name}’을(를) 담았어요.`, true);
-    else notice(kind === 'art' ? 'artHint' : 'lineHint');
+    if (removed && kind === 'art') {
+      const nextName = ICONS.get(id).name;
+      notice('artHint', `‘${ICONS.get(removed).name}’ 대신 ‘${nextName}’${josa(nextName, '을', '를')} 담았어요.`, true);
+    } else {
+      notice(kind === 'art' ? 'artHint' : 'lineHint');
+    }
     if (kind === 'art' && state.arts.length) $('#errIcon').hidden = true;
 
     refreshPickState();
@@ -188,6 +192,16 @@
     art: '두 개까지 고를 수 있어요. 세 번째를 고르면 먼저 고른 그림이 바뀌어요.',
     line: '두 개까지 고를 수 있어요.'
   };
+
+  /* 받침에 맞는 조사 (을/를) */
+  function josa(word, withBatchim, without) {
+    const s = String(word).replace(/[)\]}\s.,]+$/, '');
+    for (let i = s.length - 1; i >= 0; i--) {
+      const code = s.charCodeAt(i);
+      if (code >= 0xAC00 && code <= 0xD7A3) return ((code - 0xAC00) % 28) ? withBatchim : without;
+    }
+    return without;
+  }
   const hintTimers = { art: 0, line: 0 };
 
   function notice(which, msg, flash) {
@@ -285,7 +299,7 @@
     if (state.number.trim()) picked.push(state.number.trim());
     if (state.arts.length) picked.push(`그림 ${state.arts.length}`);
     if (state.lines.length) picked.push(`라인 ${state.lines.length}`);
-    dockSub.textContent = picked.length ? picked.join(' · ') : '이름 · 컬러 · 무드 · 그림 · 숫자 · 키워드';
+    dockSub.textContent = picked.length ? picked.join(' · ') : '여섯 가지만 고르면 돼요';
   }
 
   /* ---------- validation ---------- */
