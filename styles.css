@@ -470,7 +470,7 @@ main,header,footer,.dock{position:relative;z-index:1}
   padding:1px 9px;
   transition:all .2s ease;
 }
-.pick-state.done{
+.pick-state.is-full{
   color:#f0d9a8;
   border-color:rgba(217,184,119,.5);
   background:rgba(217,184,119,.12);

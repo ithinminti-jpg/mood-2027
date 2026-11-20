@@ -220,7 +220,7 @@
       const el = $(sel);
       if (!el) return;
       el.textContent = `${list.length} / ${LIMIT}`;
-      el.classList.toggle('done', list.length === LIMIT);
+      el.classList.toggle('is-full', list.length === LIMIT);
     });
 
     const parts = [];
