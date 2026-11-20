@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Pen+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20271120f">
+<link rel="stylesheet" href="styles.css?v=20271120g">
 </head>
 <body>
 <div class="sky" aria-hidden="true"></div>
@@ -99,14 +99,14 @@
 <!-- 은은하게 반짝이는 오너먼트 (터치·입력 영역을 가리지 않습니다) -->
 <div class="orn-layer" aria-hidden="true">
   <!-- 상단 모서리: 왼쪽 -->
-  <svg class="orn" viewBox="0 0 100 100" style="top:-30px;left:-26px;width:88px;--d:-.4s;--o:.5"><use href="#oBallStripe"/></svg>
-  <svg class="orn" viewBox="0 0 100 100" style="top:30px;left:46px;width:33px;--d:-2.6s;--o:.46"><use href="#oBallRed"/></svg>
-  <svg class="orn" viewBox="0 0 70 104" style="top:0;left:94px;width:28px;--d:-4.1s;--o:.4"><use href="#oCane"/></svg>
+  <svg class="orn" viewBox="0 0 100 100" style="top:-34px;left:-32px;width:82px;--d:-.4s;--o:.5"><use href="#oBallStripe"/></svg>
+  <svg class="orn" viewBox="0 0 100 100" style="top:26px;left:18px;width:32px;--d:-2.6s;--o:.46"><use href="#oBallRed"/></svg>
+  <svg class="orn" viewBox="0 0 70 104" style="top:-20px;left:64px;width:26px;--d:-4.1s;--o:.4;transform:rotate(16deg)"><use href="#oCane"/></svg>
 
   <!-- 상단 모서리: 오른쪽 -->
-  <svg class="orn" viewBox="0 0 100 100" style="top:-24px;right:-20px;width:78px;--d:-1.6s;--o:.5"><use href="#oBallGold"/></svg>
-  <svg class="orn" viewBox="0 0 100 100" style="top:52px;right:26px;width:29px;--d:-3.4s;--o:.44"><use href="#oBallRed"/></svg>
-  <svg class="orn" viewBox="0 0 70 104" style="top:-2px;right:76px;width:27px;--d:-.9s;--o:.38;transform:rotate(-30deg)"><use href="#oCane"/></svg>
+  <svg class="orn" viewBox="0 0 100 100" style="top:-28px;right:-24px;width:74px;--d:-1.6s;--o:.5"><use href="#oBallGold"/></svg>
+  <svg class="orn" viewBox="0 0 100 100" style="top:44px;right:16px;width:28px;--d:-3.4s;--o:.44"><use href="#oBallRed"/></svg>
+  <svg class="orn" viewBox="0 0 70 104" style="top:-14px;right:60px;width:26px;--d:-.9s;--o:.38;transform:rotate(-24deg)"><use href="#oCane"/></svg>
 
   <!-- 좌우 가장자리 -->
   <svg class="orn" viewBox="0 0 100 100" style="top:33%;left:-15px;width:32px;--d:-2.1s;--o:.4"><use href="#oBallStripe"/></svg>
@@ -133,8 +133,8 @@
 
 <header class="hero">
   <div class="lede greeting">
-    <p class="greet-small">2026년을 함께 마무리하게 되어<br>감사한 마음을 담아,</p>
-    <p class="greet-big">2027년 붉은 양의 해,<br>모두가 양껏 잘 되길 소망하며</p>
+    <p class="greet-small">2026년을 함께 마무리하는 자리<br>감사한 마음을 담아</p>
+    <p class="greet-big">2027년 붉은 양의 해,<br>모두 양껏 잘 되길 소망하며</p>
   </div>
 </header>
 
@@ -153,77 +153,84 @@
       <p class="error" id="errName" hidden>이름을 적어 주세요.</p>
     </section>
 
-    <section class="panel" id="panel-keyword">
-      <header class="panel-head">
-        <span class="step">02</span>
-        <h2>2027 키워드</h2>
-        <span class="tag required">필수</span>
-      </header>
-      <p class="panel-desc">한 줄 다짐이나 새해의 단어를 짧게 적어 주세요. 영문·한글 모두 좋아요.</p>
-      <div class="field">
-        <input type="text" id="inputKeyword" name="keyword" maxlength="24"
-               placeholder="예) LUCKY 2027 / 행복하자 / PEACE" aria-label="2027 키워드">
-      </div>
-      <div class="chips" id="keywordChips" aria-label="추천 키워드">
-        <button type="button" class="chip" data-word="LUCKY 2027">LUCKY 2027</button>
-        <button type="button" class="chip" data-word="PEACE">PEACE</button>
-        <button type="button" class="chip" data-word="행복하자">행복하자</button>
-        <button type="button" class="chip" data-word="천천히, 꾸준히">천천히, 꾸준히</button>
-        <button type="button" class="chip" data-word="나답게">나답게</button>
-      </div>
-      <p class="error" id="errKeyword" hidden>키워드를 적어 주세요.</p>
-    </section>
-
     <section class="panel" id="panel-color">
       <header class="panel-head">
-        <span class="step">03</span>
-        <h2>나를 지켜줄 컬러</h2>
+        <span class="step">02</span>
+        <h2>Your Color</h2>
         <span class="tag required">필수</span>
       </header>
-      <p class="panel-desc">마음이 가는 색 하나를 골라 주세요.</p>
-      <div class="swatch-grid" id="colorGrid" role="radiogroup" aria-label="무드 컬러 26색"></div>
+      <p class="panel-desc">어떤 색이 마음에 드세요?</p>
+      <div class="swatch-grid" id="colorGrid" role="radiogroup" aria-label="아크릴 컬러 26색"></div>
       <p class="picked" id="colorPicked">아직 고르지 않았어요</p>
       <p class="error" id="errColor" hidden>컬러를 하나 골라 주세요.</p>
     </section>
 
-    <section class="panel" id="panel-point">
+    <section class="panel" id="panel-mood">
       <header class="panel-head">
-        <span class="step">04</span>
-        <h2>포인트</h2>
+        <span class="step">03</span>
+        <h2>Your Mood</h2>
         <span class="tag required">필수</span>
       </header>
-      <p class="panel-desc">마음이 가는 분위기 하나를 골라 주세요.</p>
-      <div class="point-grid" id="pointGrid" role="radiogroup" aria-label="포인트"></div>
-      <p class="error" id="errPoint" hidden>포인트를 하나 골라 주세요.</p>
+      <p class="panel-desc">분위기도 골라 보세요</p>
+      <div class="point-grid" id="moodGrid" role="radiogroup" aria-label="무드"></div>
+      <p class="error" id="errMood" hidden>분위기를 하나 골라 주세요.</p>
     </section>
 
-    <section class="panel" id="panel-icon">
+    <section class="panel" id="panel-image">
       <header class="panel-head">
-        <span class="step">05</span>
-        <h2>그림</h2>
+        <span class="step">04</span>
+        <h2>Your Image</h2>
         <span class="tag required">필수</span>
       </header>
-      <p class="panel-desc">마음에 드는 그림을 하나 골라 주세요.</p>
-      <div class="tabs" id="iconTabs" role="tablist" aria-label="그림 분류"></div>
-      <div class="icon-grid" id="iconGrid" role="radiogroup" aria-label="그림"></div>
+      <p class="panel-desc">마음에 드는 그림과 라인을 두 개씩 골라 보세요.</p>
+
+      <div class="pick-block" id="blockArt">
+        <div class="pick-head"><h3>그림</h3><span class="pick-count">124</span><span class="pick-state" id="artState">0 / 2</span></div>
+        <div class="art-wrap" id="artWrap">
+          <div class="art-scroll" id="artScroll">
+            <div class="art-grid" id="artGrid" role="group" aria-label="그림 124종"></div>
+          </div>
+          <span class="art-fade" aria-hidden="true"></span>
+        </div>
+        <p class="scroll-cue" id="artCue"><span aria-hidden="true">←</span> 좌우로 넘겨 보세요 <span aria-hidden="true">→</span></p>
+        <p class="pick-hint" id="artHint">두 개까지 고를 수 있어요. 세 번째를 고르면 먼저 고른 그림이 바뀌어요.</p>
+      </div>
+
+      <div class="pick-block" id="blockLine">
+        <div class="pick-head"><h3>라인·구분</h3><span class="pick-count">7</span><span class="pick-state" id="lineState">0 / 2</span></div>
+        <div class="line-grid" id="lineGrid" role="group" aria-label="라인·구분 7종"></div>
+        <p class="pick-hint" id="lineHint">두 개까지 고를 수 있어요.</p>
+      </div>
+
       <p class="picked" id="iconPicked">아직 고르지 않았어요</p>
       <p class="error" id="errIcon" hidden>그림을 하나 골라 주세요.</p>
     </section>
 
-    <section class="panel" id="panel-style">
+    <section class="panel" id="panel-number">
       <header class="panel-head">
-        <span class="step">06</span>
-        <h2>글씨 느낌</h2>
+        <span class="step">05</span>
+        <h2>Your Number</h2>
         <span class="tag">선택</span>
       </header>
-      <p class="panel-desc">키워드의 분위기를 골라 주세요. 고르지 않으면 상관없음으로 보내요.</p>
-      <div class="style-grid" id="styleGrid" role="radiogroup" aria-label="글씨 느낌"></div>
+      <p class="panel-desc">2027년을 대표할 나만의 숫자나 기념일을 적어주세요.</p>
+      <div class="field">
+        <input type="text" id="inputNumber" name="number" maxlength="20" placeholder="예) 2027 / 0101 / 777 / 1004" aria-label="Your Number">
+      </div>
     </section>
 
-    <footer class="site-foot">
-      <p>2027년을 앞둔 작은 마음이에요.<br>고른 것들은 새해의 인사로 전해집니다.</p>
-      <p class="foot-mark">2027 · MOOD</p>
-    </footer>
+    <section class="panel" id="panel-keyword">
+      <header class="panel-head">
+        <span class="step">06</span>
+        <h2>Your Keyword</h2>
+        <span class="tag required">필수</span>
+      </header>
+      <p class="panel-desc">2027년 나와 함께 할 단어를 적어주세요</p>
+      <div class="field">
+        <input type="text" id="inputKeyword" name="keyword" maxlength="24" placeholder="예) 꿀호떡 / 나는멋있어 / ArieL / Romans5:8 / Happy" aria-label="Your Keyword">
+      </div>
+      <p class="error" id="errKeyword" hidden>단어를 적어 주세요.</p>
+    </section>
+
   </form>
 </main>
 
@@ -231,7 +238,7 @@
   <span class="dock-swatch" id="dockSwatch" aria-hidden="true"></span>
   <div class="dock-text">
     <strong id="dockTitle">아직 고른 게 없어요</strong>
-    <small id="dockSub">이름 · 키워드 · 컬러 · 포인트 · 그림</small>
+    <small id="dockSub">이름 · 컬러 · 무드 · 그림 · 숫자 · 키워드</small>
   </div>
   <button type="submit" form="moodForm" class="btn-primary" id="submitBtn">이대로 참여하기</button>
 </div>
@@ -248,11 +255,11 @@
     <h2 id="doneTitle">참여해 주셔서 감사합니다!</h2>
     <p class="done-sub" id="doneSub">고른 마음이 잘 담겼어요.</p>
     <ul class="summary" id="doneSummary"></ul>
-    <p class="done-note">2027년 붉은 양의 해, 모두가 양껏 잘 되길 바라며.<br>2026년을 함께 마무리하게 되어 감사합니다.</p>
+    <p class="done-note">2027년 붉은 양의 해, 모두 양껏 잘 되길 바라며.<br>2026년을 함께 마무리하는 자리, 감사한 마음을 담아.</p>
     <button type="button" class="btn-ghost" id="againBtn">처음부터 다시 고르기</button>
   </div>
 </div>
 
-<script src="app.js?v=20271120f"></script>
+<script src="app.js?v=20271120g"></script>
 </body>
 </html>

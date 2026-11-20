@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>390 preview</title>
+<style>
+html,body{margin:0;padding:0;background:#111316;height:900px;overflow:hidden}
+iframe{display:block;width:405px;height:900px;border:0;background:#07080c}
+</style>
+</head>
+<body>
+<iframe id="f" src="index.html?v=20271120g"></iframe>
+<script>
+const p = new URLSearchParams(location.search);
+const demo = p.get('demo');
+const y = Number(p.get('y') || 0);
+const f = document.getElementById('f');
+if (demo) f.src = 'index.html?v=20271120g&demo=' + encodeURIComponent(demo);
+f.addEventListener('load', () => {
+  const w = f.contentWindow;
+  const dy = y || Number(p.get('sel') ? 0 : 0);
+  setTimeout(() => { if (dy) w.scrollTo(0, dy); }, 60);
+});
+window.__frame = f;
+window.__go = (yy) => { f.contentWindow.scrollTo(0, yy); return f.contentWindow.scrollY; };
+window.__panelTop = (id) => {
+  const d = f.contentDocument;
+  const el = d.getElementById(id);
+  if (!el) return -1;
+  return el.getBoundingClientRect().top + f.contentWindow.scrollY;
+};
+window.__metrics = () => {
+  const w = f.contentWindow, d = f.contentDocument;
+  return {
+    innerWidth: w.innerWidth,
+    innerHeight: w.innerHeight,
+    scrollHeight: d.documentElement.scrollHeight,
+    heroTop: d.querySelector('.hero').getBoundingClientRect().top,
+    greetSmall: d.querySelector('.greet-small').getBoundingClientRect(),
+    greetBig: d.querySelector('.greet-big').getBoundingClientRect(),
+    panelImage: window.__panelTop('panel-image'),
+    artGrid: (() => { const g = d.getElementById('artGrid'); const r = g.getBoundingClientRect(); return { w: r.width, h: r.height, scrollW: d.getElementById('artScroll').scrollWidth, clientW: d.getElementById('artScroll').clientWidth }; })(),
+    errors: window.__errors || null
+  };
+};
+</script>
+</body>
+</html>

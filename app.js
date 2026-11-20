@@ -1,37 +1,31 @@
-/* 2027 나만의 무드 — app.js */
+/* 2027 나만의 무드 — app.js (v4) */
 (() => {
   'use strict';
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  /* ---------- base64 (한글) ---------- */
-  function b64utf8(s) {
-    try {
-      const bin = atob(s);
-      const bytes = Array.prototype.map.call(bin, c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('');
-      return decodeURIComponent(bytes);
-    } catch (e) { return s; }
-  }
+  const LIMIT = 2;          // 그림·라인 각각 두 개까지
+  const LINE_SKIP = 'i101'; // ROOM NO. 라인은 보기에서 제외
 
   /* ---------- state ---------- */
   const state = {
     name: '',
     keyword: '',
+    number: '',
     colorId: null,
-    pointKey: null,
-    iconId: null,
-    styleKey: 'any',
-    group: 'basic'
+    moodKey: null,
+    arts: [],   // 그림 최대 2 (고른 순서)
+    lines: []   // 라인·구분 최대 2 (고른 순서)
   };
 
   let DATA = null;
   const COLORS = new Map();
-  const POINTS = new Map();
+  const MOODS = new Map();
   const ICONS = new Map();
-  const STYLES = new Map();
+  let ART_IDS = [];
+  let LINE_IDS = [];
   let submitting = false;
-  let submitted = false;
 
   const dock = $('#dock');
   const dockTitle = $('#dockTitle');
@@ -39,7 +33,10 @@
   const dockSwatch = $('#dockSwatch');
   const submitBtn = $('#submitBtn');
 
-  /* ---------- rendering ---------- */
+  /* ---------- helpers ---------- */
+  const stripBrackets = s => String(s).replace(/[[\]]/g, '').replace(/\s+/g, ' ').trim();
+
+  /* ---------- color ---------- */
   function renderColors() {
     const grid = $('#colorGrid');
     const frag = document.createDocumentFragment();
@@ -57,8 +54,7 @@
     grid.appendChild(frag);
     grid.addEventListener('click', e => {
       const b = e.target.closest('.swatch');
-      if (!b) return;
-      selectColor(b.dataset.id);
+      if (b) selectColor(b.dataset.id);
     });
   }
 
@@ -73,8 +69,9 @@
     updateDock();
   }
 
-  function renderPoints() {
-    const grid = $('#pointGrid');
+  /* ---------- mood (골드 / 실버) ---------- */
+  function renderMoods() {
+    const grid = $('#moodGrid');
     DATA.points.forEach(p => {
       const b = document.createElement('button');
       b.type = 'button';
@@ -88,126 +85,157 @@
     grid.addEventListener('click', e => {
       const b = e.target.closest('.point');
       if (!b) return;
-      state.pointKey = b.dataset.key;
-      $$('#pointGrid .point').forEach(el => el.setAttribute('aria-checked', String(el.dataset.key === state.pointKey)));
-      $('#errPoint').hidden = true;
+      state.moodKey = b.dataset.key;
+      $$('#moodGrid .point').forEach(el => el.setAttribute('aria-checked', String(el.dataset.key === state.moodKey)));
+      $('#errMood').hidden = true;
       updateDock();
     });
   }
 
-  function renderTabs() {
-    const tabs = $('#iconTabs');
-    DATA.groups.forEach((g, i) => {
-      const n = DATA.icons.filter(x => x.group === g.key).length;
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'tab';
-      b.setAttribute('role', 'tab');
-      b.setAttribute('aria-selected', String(i === 0));
-      b.dataset.key = g.key;
-      b.innerHTML = `${g.label}<span class="count">${n}</span>`;
-      tabs.appendChild(b);
-    });
-    tabs.addEventListener('click', e => {
-      const b = e.target.closest('.tab');
-      if (!b) return;
-      state.group = b.dataset.key;
-      $$('#iconTabs .tab').forEach(el => el.setAttribute('aria-selected', String(el.dataset.key === state.group)));
-      renderIconGrid();
-    });
+  /* ---------- image grid (2개 고르기) ---------- */
+  function iconButton(i) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'icon-cell';
+    b.dataset.id = i.id;
+    b.setAttribute('role', 'checkbox');
+    b.setAttribute('aria-checked', 'false');
+    b.setAttribute('aria-label', i.name);
+    b.innerHTML = `<img src="${i.file}" alt="" loading="lazy" width="${i.w}" height="${i.h}"><span class="pick-badge" aria-hidden="true"></span>`;
+    return b;
   }
 
-  function renderIconGrid() {
-    const grid = $('#iconGrid');
-    grid.innerHTML = '';
-    const frag = document.createDocumentFragment();
-    DATA.icons.filter(i => i.group === state.group).forEach(i => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'icon-cell';
-      b.dataset.group = i.group;
-      b.dataset.id = i.id;
-      b.setAttribute('role', 'radio');
-      b.setAttribute('aria-checked', String(i.id === state.iconId));
-      b.setAttribute('aria-label', i.name);
-      b.innerHTML = `<img src="${i.file}" alt="" loading="lazy" width="${i.w}" height="${i.h}">`;
-      frag.appendChild(b);
+  function renderImageGrids() {
+    const artGrid = $('#artGrid');
+    const lineGrid = $('#lineGrid');
+    const af = document.createDocumentFragment();
+    ART_IDS.forEach(id => af.appendChild(iconButton(ICONS.get(id))));
+    artGrid.appendChild(af);
+    const lf = document.createDocumentFragment();
+    LINE_IDS.forEach(id => lf.appendChild(iconButton(ICONS.get(id))));
+    lineGrid.appendChild(lf);
+
+    artGrid.addEventListener('click', e => {
+      const b = e.target.closest('.icon-cell');
+      if (b) togglePick('art', b.dataset.id);
     });
-    grid.appendChild(frag);
+    lineGrid.addEventListener('click', e => {
+      const b = e.target.closest('.icon-cell');
+      if (b) togglePick('line', b.dataset.id);
+    });
+
+    bindArtScroll();
   }
 
-  function renderStyles() {
-    const grid = $('#styleGrid');
-    DATA.styles.forEach(s => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'style';
-      b.setAttribute('role', 'radio');
-      b.setAttribute('aria-checked', String(s.key === state.styleKey));
-      b.dataset.key = s.key;
-      const cls = s.key === 'classic' ? 'serif' : s.key === 'modern' ? 'sans' : s.key === 'hand' ? 'hand' : 'serif';
-      b.innerHTML = `<span class="aa ${cls}">Aa</span><span>${s.label}</span>`;
-      grid.appendChild(b);
-    });
-    grid.addEventListener('click', e => {
-      const b = e.target.closest('.style');
-      if (!b) return;
-      state.styleKey = b.dataset.key;
-      $$('#styleGrid .style').forEach(el => el.setAttribute('aria-checked', String(el.dataset.key === state.styleKey)));
-      updateDock();
-    });
+  /* 그림 그리드: 화면 폭에 맞춰 4행 × (4.6열) 가로 스크롤 칸 크기 계산 */
+  function sizeArtGrid() {
+    const sc = $('#artScroll');
+    const grid = $('#artGrid');
+    if (!sc || !grid) return;
+    const gap = 6;
+    const per = window.innerWidth >= 600 ? 6.4 : 4.6;
+    const inner = sc.clientWidth - 6; // 좌우 padding 3px 씩
+    const cell = Math.max(46, Math.floor((inner - gap * (Math.ceil(per) - 1)) / per));
+    grid.style.setProperty('--cell', cell + 'px');
   }
 
-  function selectIcon(id) {
-    state.iconId = id;
-    $$('#iconGrid .icon-cell').forEach(el => el.setAttribute('aria-checked', String(el.dataset.id === id)));
-    const i = ICONS.get(id);
-    $('#iconPicked').innerHTML = i ? `고른 그림 · <b>${i.name}</b>` : '아직 고르지 않았어요';
-    $('#errIcon').hidden = true;
+  function bindArtScroll() {
+    const sc = $('#artScroll');
+    const wrap = $('#artWrap');
+    const cue = $('#artCue');
+    if (!sc) return;
+
+    const sync = () => {
+      const max = sc.scrollWidth - sc.clientWidth;
+      if (wrap) wrap.classList.toggle('at-end', max > 0 && sc.scrollLeft >= max - 4);
+      if (cue) cue.classList.toggle('off', sc.scrollLeft > 16);
+    };
+    sc.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', () => { sizeArtGrid(); sync(); });
+    sizeArtGrid();
+    sync();
+  }
+
+  function togglePick(kind, id) {
+    const list = kind === 'art' ? state.arts : state.lines;
+    const gridSel = kind === 'art' ? '#artGrid' : '#lineGrid';
+    const idx = list.indexOf(id);
+    let removed = null;
+
+    if (idx >= 0) {
+      list.splice(idx, 1);
+    } else {
+      if (list.length >= LIMIT) removed = list.shift();
+      list.push(id);
+    }
+
+    $$(`${gridSel} .icon-cell`).forEach(el => {
+      const pos = list.indexOf(el.dataset.id);
+      el.setAttribute('aria-checked', String(pos >= 0));
+      const badge = el.querySelector('.pick-badge');
+      if (badge) badge.textContent = pos >= 0 ? String(pos + 1) : '';
+    });
+
+    if (removed && kind === 'art') notice('artHint', `‘${ICONS.get(removed).name}’ 대신 ‘${ICONS.get(id).name}’을(를) 담았어요.`, true);
+    else notice(kind === 'art' ? 'artHint' : 'lineHint');
+    if (kind === 'art' && state.arts.length) $('#errIcon').hidden = true;
+
+    refreshPickState();
     updateDock();
   }
 
-  function bindIconGrid() {
-    $('#iconGrid').addEventListener('click', e => {
-      const b = e.target.closest('.icon-cell');
-      if (!b) return;
-      selectIcon(b.dataset.id);
-    });
-  }
+  const HINTS = {
+    art: '두 개까지 고를 수 있어요. 세 번째를 고르면 먼저 고른 그림이 바뀌어요.',
+    line: '두 개까지 고를 수 있어요.'
+  };
+  const hintTimers = { art: 0, line: 0 };
 
-  /* ---------- 선택 요약 (하단 도크) ---------- */
-  function pickedCount() {
-    return ['name', 'keyword', 'colorId', 'pointKey', 'iconId'].filter(k => !!state[k]).length;
-  }
-
-  function updateDock() {
-    const color = state.colorId ? COLORS.get(state.colorId) : null;
-    const point = state.pointKey ? POINTS.get(state.pointKey) : null;
-    const icon = state.iconId ? ICONS.get(state.iconId) : null;
-
-    if (color) {
-      dockSwatch.style.background = color.hex;
-      dockSwatch.classList.add('on');
+  function notice(which, msg, flash) {
+    const kind = which === 'artHint' ? 'art' : 'line';
+    const el = $('#' + which);
+    if (!el) return;
+    clearTimeout(hintTimers[kind]);
+    if (flash && msg) {
+      el.textContent = msg;
+      el.classList.add('flash');
+      hintTimers[kind] = setTimeout(() => {
+        el.textContent = HINTS[kind];
+        el.classList.remove('flash');
+      }, 4200);
     } else {
-      dockSwatch.classList.remove('on');
+      el.classList.remove('flash');
+      const list = kind === 'art' ? state.arts : state.lines;
+      if (list.length >= LIMIT) {
+        el.textContent = '두 개 다 골랐어요.';
+        el.classList.add('full');
+      } else {
+        el.textContent = HINTS[kind];
+        el.classList.remove('full');
+      }
     }
+  }
 
-    const n = pickedCount();
-    dockTitle.textContent = n === 0
-      ? '아직 고른 게 없어요'
-      : n === 5 ? '다 골랐어요. 이대로 참여해 주세요' : `다섯 가지 중 ${n}가지를 골랐어요`;
+  function refreshPickState() {
+    [['art', '#artState', state.arts], ['line', '#lineState', state.lines]].forEach(([kind, sel, list]) => {
+      const el = $(sel);
+      if (!el) return;
+      el.textContent = `${list.length} / ${LIMIT}`;
+      el.classList.toggle('done', list.length === LIMIT);
+    });
 
-    const picked = [];
-    if (color) picked.push(color.name);
-    if (point) picked.push(point.label);
-    if (icon) picked.push(icon.name);
-    dockSub.textContent = picked.length ? picked.join(' · ') : '이름 · 키워드 · 컬러 · 포인트 · 그림';
+    const parts = [];
+    state.arts.forEach(id => parts.push(ICONS.get(id).name));
+    state.lines.forEach(id => parts.push(ICONS.get(id).name));
+    $('#iconPicked').innerHTML = parts.length
+      ? `고른 이미지 · <b>${parts.join(' · ')}</b>`
+      : '아직 고르지 않았어요';
   }
 
   /* ---------- inputs ---------- */
   function bindInputs() {
     const nameEl = $('#inputName');
     const kwEl = $('#inputKeyword');
+    const numEl = $('#inputNumber');
 
     nameEl.addEventListener('input', () => {
       state.name = nameEl.value;
@@ -219,16 +247,45 @@
       if (state.keyword.trim()) $('#errKeyword').hidden = true;
       updateDock();
     });
-
-    $('#keywordChips').addEventListener('click', e => {
-      const b = e.target.closest('.chip');
-      if (!b) return;
-      kwEl.value = b.dataset.word;
-      state.keyword = b.dataset.word;
-      $('#errKeyword').hidden = true;
+    numEl.addEventListener('input', () => {
+      state.number = numEl.value;
       updateDock();
-      kwEl.focus({ preventScroll: true });
     });
+  }
+
+  /* ---------- 선택 요약 (하단 도크) ---------- */
+  function basicPicked() {
+    return [
+      !!state.name.trim(),
+      !!state.colorId,
+      !!state.moodKey,
+      state.arts.length > 0,
+      !!state.keyword.trim()
+    ].filter(Boolean).length;
+  }
+
+  function updateDock() {
+    const color = state.colorId ? COLORS.get(state.colorId) : null;
+    const mood = state.moodKey ? MOODS.get(state.moodKey) : null;
+
+    if (color) {
+      dockSwatch.style.background = color.hex;
+      dockSwatch.classList.add('on');
+    } else {
+      dockSwatch.classList.remove('on');
+    }
+
+    const n = basicPicked();
+    dockTitle.textContent = n === 0
+      ? '아직 고른 게 없어요'
+      : n === 5 ? '다 골랐어요. 이대로 참여해 주세요' : `다섯 가지 중 ${n}가지를 골랐어요`;
+
+    const picked = [];
+    if (mood) picked.push(mood.label);
+    if (state.number.trim()) picked.push(state.number.trim());
+    if (state.arts.length) picked.push(`그림 ${state.arts.length}`);
+    if (state.lines.length) picked.push(`라인 ${state.lines.length}`);
+    dockSub.textContent = picked.length ? picked.join(' · ') : '이름 · 컬러 · 무드 · 그림 · 숫자 · 키워드';
   }
 
   /* ---------- validation ---------- */
@@ -236,20 +293,20 @@
     const problems = [];
     const set = (id, bad) => { $(id).hidden = !bad; if (bad) problems.push(id); };
     set('#errName', !state.name.trim());
-    set('#errKeyword', !state.keyword.trim());
     set('#errColor', !state.colorId);
-    set('#errPoint', !state.pointKey);
-    set('#errIcon', !state.iconId);
+    set('#errMood', !state.moodKey);
+    set('#errIcon', state.arts.length === 0);
+    set('#errKeyword', !state.keyword.trim());
     return problems;
   }
 
   function focusFirstProblem(problems) {
     const map = {
       '#errName': '#panel-name',
-      '#errKeyword': '#panel-keyword',
       '#errColor': '#panel-color',
-      '#errPoint': '#panel-point',
-      '#errIcon': '#panel-icon'
+      '#errMood': '#panel-mood',
+      '#errIcon': '#panel-image',
+      '#errKeyword': '#panel-keyword'
     };
     if (!problems.length) return;
     const panel = $(map[problems[0]]);
@@ -259,6 +316,12 @@
   }
 
   /* ---------- submit ---------- */
+  function imageAnswer() {
+    const art = state.arts.map(id => stripBrackets(ICONS.get(id).ans));
+    const line = state.lines.map(id => stripBrackets(ICONS.get(id).ans));
+    return `그림: [${art.join(', ')}] / 라인: [${line.join(', ')}]`;
+  }
+
   async function submit(e) {
     e?.preventDefault();
     if (submitting) return;
@@ -269,19 +332,17 @@
     }
 
     const color = COLORS.get(state.colorId);
-    const point = POINTS.get(state.pointKey);
-    const icon = ICONS.get(state.iconId);
-    const style = STYLES.get(state.styleKey);
+    const mood = MOODS.get(state.moodKey);
     const ans = v => (DATA.enc && typeof v === 'string' ? b64utf8(v) : v);
 
     const entries = DATA.form.entries;
     const body = new URLSearchParams();
     body.append(entries.name, state.name.trim());
-    body.append(entries.keyword, state.keyword.trim());
     body.append(entries.color, ans(color.ans));
-    body.append(entries.point, ans(point.ans));
-    body.append(entries.icon, ans(icon.ans));
-    body.append(entries.style, style ? ans(style.ans) : '상관없음');
+    body.append(entries.mood, ans(mood.ans));
+    body.append(entries.image, imageAnswer());
+    body.append(entries.number, state.number.trim());
+    body.append(entries.keyword, state.keyword.trim());
 
     submitting = true;
     submitBtn.disabled = true;
@@ -308,19 +369,23 @@
   }
 
   function showDone() {
-    submitted = true;
     const color = COLORS.get(state.colorId);
-    const point = POINTS.get(state.pointKey);
-    const icon = ICONS.get(state.iconId);
-    const style = STYLES.get(state.styleKey) || STYLES.get('any');
+    const mood = MOODS.get(state.moodKey);
+
+    const artNames = state.arts.map(id => ICONS.get(id).name);
+    const lineNames = state.lines.map(id => ICONS.get(id).name);
+    const imageText = [
+      artNames.length ? `그림 ${artNames.join(' · ')}` : '',
+      lineNames.length ? `라인 ${lineNames.join(' · ')}` : ''
+    ].filter(Boolean).join(' / ');
 
     const rows = [
       ['이름', state.name.trim()],
-      ['키워드', state.keyword.trim()],
-      ['컬러', color.name, color.hex],
-      ['포인트', point.label],
-      ['그림', icon.name],
-      ['글씨 느낌', style ? style.label : '상관없음']
+      ['Color', color.name, color.hex],
+      ['Mood', mood.label],
+      ['Image', imageText || '—'],
+      ['Number', state.number.trim() || '—'],
+      ['Keyword', state.keyword.trim()]
     ];
 
     const list = $('#doneSummary');
@@ -354,28 +419,46 @@
   function closeDone() {
     $('#doneScreen').hidden = true;
     document.body.style.overflow = '';
-    submitted = false;
     dock.classList.remove('hide');
   }
 
   function resetAll() {
-    ['#inputName', '#inputKeyword'].forEach(s => { $(s).value = ''; });
+    ['#inputName', '#inputKeyword', '#inputNumber'].forEach(s => { $(s).value = ''; });
     state.name = '';
     state.keyword = '';
+    state.number = '';
     state.colorId = null;
-    state.pointKey = null;
-    state.iconId = null;
-    state.styleKey = 'any';
+    state.moodKey = null;
+    state.arts = [];
+    state.lines = [];
     $$('#colorGrid .swatch').forEach(el => el.setAttribute('aria-checked', 'false'));
-    $$('#pointGrid .point').forEach(el => el.setAttribute('aria-checked', 'false'));
-    $$('#styleGrid .style').forEach(el => el.setAttribute('aria-checked', String(el.dataset.key === 'any')));
-    renderIconGrid();
+    $$('#moodGrid .point').forEach(el => el.setAttribute('aria-checked', 'false'));
+    $$('.icon-cell').forEach(el => {
+      el.setAttribute('aria-checked', 'false');
+      const b = el.querySelector('.pick-badge');
+      if (b) b.textContent = '';
+    });
     $('#colorPicked').textContent = '아직 고르지 않았어요';
-    $('#iconPicked').textContent = '아직 고르지 않았어요';
-    ['#errName', '#errKeyword', '#errColor', '#errPoint', '#errIcon'].forEach(s => { $(s).hidden = true; });
+    const sc = $('#artScroll');
+    if (sc) sc.scrollLeft = 0;
+    $('#artCue')?.classList.remove('off');
+    $('#artWrap')?.classList.remove('at-end');
+    refreshPickState();
+    notice('artHint');
+    notice('lineHint');
+    ['#errName', '#errKeyword', '#errColor', '#errMood', '#errIcon'].forEach(s => { $(s).hidden = true; });
     closeDone();
     updateDock();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* ---------- base64 (한글) ---------- */
+  function b64utf8(s) {
+    try {
+      const bin = atob(s);
+      const bytes = Array.prototype.map.call(bin, c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('');
+      return decodeURIComponent(bytes);
+    } catch (e) { return s; }
   }
 
   /* ---------- boot ---------- */
@@ -388,18 +471,21 @@
       dockSub.textContent = '새로고침해 주세요';
       return;
     }
+
     DATA.colors.forEach(c => COLORS.set(c.id, c));
-    DATA.points.forEach(p => POINTS.set(p.key, p));
+    DATA.points.forEach(p => MOODS.set(p.key, p));
     DATA.icons.forEach(i => ICONS.set(i.id, i));
-    DATA.styles.forEach(s => STYLES.set(s.key, s));
+
+    ART_IDS = DATA.icons.filter(i => i.group !== 'shape').map(i => i.id);
+    LINE_IDS = DATA.icons.filter(i => i.group === 'shape' && i.id !== LINE_SKIP).map(i => i.id);
 
     renderColors();
-    renderPoints();
-    renderTabs();
-    renderIconGrid();
-    renderStyles();
-    bindIconGrid();
+    renderMoods();
+    renderImageGrids();
     bindInputs();
+    refreshPickState();
+    notice('artHint');
+    notice('lineHint');
 
     $('#moodForm').addEventListener('submit', submit);
     $('#againBtn').addEventListener('click', resetAll);
@@ -413,17 +499,19 @@
     const params = new URLSearchParams(location.search);
     const demo = params.get('demo');
     if (!demo) return;
-    const hand = demo === '2';
-    const nameEl = $('#inputName'), kwEl = $('#inputKeyword');
+    const nameEl = $('#inputName'), kwEl = $('#inputKeyword'), numEl = $('#inputNumber');
     nameEl.value = '홍길동'; state.name = '홍길동';
-    kwEl.value = hand ? '양껏 행복하자' : 'LUCKY 2027';
+    kwEl.value = demo === '2' ? '양껏 행복하자' : '나는멋있어';
     state.keyword = kwEl.value;
-    selectColor(hand ? 'c22' : 'c05');
-    const pointBtn = document.querySelector(`.point[data-key="${hand ? 'white' : 'silver'}"]`);
-    if (pointBtn) pointBtn.click();
-    selectIcon('i094');
-    const styleBtn = document.querySelector(`.style[data-key="${hand ? 'hand' : 'classic'}"]`);
-    if (styleBtn) styleBtn.click();
+    numEl.value = demo === '2' ? '0101' : '2027';
+    state.number = numEl.value;
+    selectColor(demo === '2' ? 'c22' : 'c05');
+    const moodBtn = document.querySelector(`#moodGrid .point[data-key="${demo === '2' ? 'silver' : 'gold'}"]`);
+    if (moodBtn) moodBtn.click();
+    togglePick('art', 'i094');
+    togglePick('art', demo === '2' ? 'i001' : 'i006');
+    togglePick('line', 'i102');
+    if (demo === '2') togglePick('line', 'i105');
     updateDock();
   }
 
