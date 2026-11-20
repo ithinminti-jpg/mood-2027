@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f2e8">
+<title>2027 나만의 무드 카드</title>
+<meta name="description" content="2027년, 나를 닮은 색과 그림으로 새해의 무드 카드를 만들어 보세요.">
+<meta property="og:title" content="2027 나만의 무드 카드">
+<meta property="og:description" content="한 해를 닮은 색과 그림을 골라 새해의 첫 카드를 만들어 보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Pen+Script&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="aura" aria-hidden="true"></div>
+
+<header class="hero">
+  <p class="eyebrow"><span class="year">2027</span> 정미년 · 새해의 카드</p>
+  <h1>나만의 <em>무드 카드</em></h1>
+  <p class="lede greeting">2027년 붉은 양의 해,<br>모두가 양껏 잘 되기를 소망하며,<br>2026년을 함께 마무리하게 되어 감사한 마음을 담아.</p>
+</header>
+
+<main>
+  <section class="stage" aria-label="완성될 카드 미리보기">
+    <div class="card-tilt">
+      <article class="mood-card" id="moodCard" aria-live="polite">
+        <span class="card-hole" aria-hidden="true"></span>
+        <div class="card-frame">
+          <div class="card-head">
+            <span class="card-year">2027</span>
+            <span class="card-mark">mood card</span>
+          </div>
+
+          <p class="card-keyword" id="cardKeyword">나만의 무드</p>
+
+          <div class="card-medal" id="cardMedal">
+            <img id="cardIcon" alt="" hidden>
+            <span class="card-medal-empty" id="cardIconEmpty">그림</span>
+          </div>
+
+          <div class="card-foot">
+            <span class="card-line" aria-hidden="true"></span>
+            <p class="card-name" id="cardName">이름</p>
+            <p class="card-note">정미년 · 2027</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="stage-hint" id="stageHint">색과 그림을 고르면 카드가 채워져요</p>
+  </section>
+
+  <form id="moodForm" novalidate>
+    <section class="panel" id="panel-name">
+      <header class="panel-head">
+        <span class="step">01</span>
+        <h2>이름</h2>
+        <span class="tag required">필수</span>
+      </header>
+      <p class="panel-desc">카드에 새겨질 이름이에요.</p>
+      <div class="field">
+        <input type="text" id="inputName" name="name" maxlength="16" autocomplete="name"
+               placeholder="예) 홍길동" aria-label="이름">
+      </div>
+      <p class="error" id="errName" hidden>이름을 적어 주세요.</p>
+    </section>
+
+    <section class="panel" id="panel-keyword">
+      <header class="panel-head">
+        <span class="step">02</span>
+        <h2>2027년 나의 키워드</h2>
+        <span class="tag required">필수</span>
+      </header>
+      <p class="panel-desc">한 줄 다짐이나 올해의 단어를 짧게 적어 주세요. 영문·한글 모두 좋아요.</p>
+      <div class="field">
+        <input type="text" id="inputKeyword" name="keyword" maxlength="24"
+               placeholder="예) LUCKY 2027 / 행복하자 / PEACE" aria-label="2027년 나의 키워드">
+      </div>
+      <div class="chips" id="keywordChips" aria-label="추천 키워드">
+        <button type="button" class="chip" data-word="LUCKY 2027">LUCKY 2027</button>
+        <button type="button" class="chip" data-word="PEACE">PEACE</button>
+        <button type="button" class="chip" data-word="행복하자">행복하자</button>
+        <button type="button" class="chip" data-word="천천히, 꾸준히">천천히, 꾸준히</button>
+        <button type="button" class="chip" data-word="나답게">나답게</button>
+      </div>
+      <p class="error" id="errKeyword" hidden>키워드를 적어 주세요.</p>
+    </section>
+
+    <section class="panel" id="panel-color">
+      <header class="panel-head">
+        <span class="step">03</span>
+        <h2>2027년 나를 지켜줄 무드 컬러</h2>
+        <span class="tag required">필수</span>
+      </header>
+      <p class="panel-desc">마음이 가는 색 하나를 골라 주세요.</p>
+      <div class="swatch-grid" id="colorGrid" role="radiogroup" aria-label="무드 컬러 26색"></div>
+      <p class="picked" id="colorPicked">아직 고르지 않았어요</p>
+      <p class="error" id="errColor" hidden>무드 컬러를 하나 골라 주세요.</p>
+    </section>
+
+    <section class="panel" id="panel-point">
+      <header class="panel-head">
+        <span class="step">04</span>
+        <h2>어울리는 포인트</h2>
+        <span class="tag required">필수</span>
+      </header>
+      <p class="panel-desc">카드의 테두리와 글씨에 얹힐 색이에요.</p>
+      <div class="point-grid" id="pointGrid" role="radiogroup" aria-label="포인트 색"></div>
+      <p class="error" id="errPoint" hidden>포인트를 하나 골라 주세요.</p>
+    </section>
+
+    <section class="panel" id="panel-icon">
+      <header class="panel-head">
+        <span class="step">05</span>
+        <h2>내년 내 편이 되어줄 그림</h2>
+        <span class="tag required">필수</span>
+      </header>
+      <p class="panel-desc">카드 가운데에 놓일 그림이에요. 마음에 드는 것을 하나 골라 주세요.</p>
+      <div class="tabs" id="iconTabs" role="tablist" aria-label="그림 분류"></div>
+      <div class="icon-grid" id="iconGrid" role="radiogroup" aria-label="그림"></div>
+      <p class="picked" id="iconPicked">아직 고르지 않았어요</p>
+      <p class="error" id="errIcon" hidden>그림을 하나 골라 주세요.</p>
+    </section>
+
+    <section class="panel" id="panel-style">
+      <header class="panel-head">
+        <span class="step">06</span>
+        <h2>글씨 느낌</h2>
+        <span class="tag">선택</span>
+      </header>
+      <p class="panel-desc">키워드가 놓일 글씨 분위기예요. 고르지 않으면 상관없음으로 보내요.</p>
+      <div class="style-grid" id="styleGrid" role="radiogroup" aria-label="글씨 느낌"></div>
+    </section>
+
+    <footer class="site-foot">
+      <p>2027년을 앞둔 작은 서프라이즈예요.<br>고른 내용은 카드로 완성되어 전해집니다.</p>
+      <p class="foot-mark">2027 · MOOD CARD</p>
+    </footer>
+  </form>
+</main>
+
+<div class="dock" id="dock">
+  <div class="dock-mini" id="dockMini" aria-hidden="true">
+    <span class="dock-dot" id="dockDot"></span>
+    <span class="dock-icon"><img id="dockIcon" alt="" hidden></span>
+  </div>
+  <div class="dock-text">
+    <strong id="dockTitle">카드를 채워 주세요</strong>
+    <small id="dockSub">이름 · 키워드 · 색 · 포인트 · 그림</small>
+  </div>
+  <button type="submit" form="moodForm" class="btn-primary" id="submitBtn">카드 완성하기</button>
+</div>
+
+<div class="done" id="doneScreen" hidden>
+  <div class="done-inner">
+    <p class="done-eyebrow">완성되었어요</p>
+    <h2 id="doneTitle">2027 나만의 무드 카드</h2>
+    <p class="done-sub" id="doneSub">새해의 카드가 준비됐어요.</p>
+    <div class="done-stage" id="doneStage"></div>
+    <p class="done-memo">화면을 캡처해 두거나, 아래 버튼으로 카드를 저장해 보세요.</p>
+    <p class="done-note">2027년 붉은 양의 해, 모두가 양껏 잘 되기를 바라며.<br>2026년을 함께 마무리하게 되어 감사합니다.</p>
+    <div class="done-actions">
+      <button type="button" class="btn-ghost" id="saveBtn">카드 저장</button>
+      <button type="button" class="btn-primary" id="againBtn">다시 만들기</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1478 @@
+{
+ "year": 2027,
+ "title": "2027 나만의 무드 카드",
+ "colors": [
+  {
+   "id": "c01",
+   "name": "흰색",
+   "hex": "#e5e4df",
+   "pearl": false,
+   "file": "assets/colors/c01.png",
+   "ans": "c01 | #1 흰색"
+  },
+  {
+   "id": "c02",
+   "name": "연회색",
+   "hex": "#c2bdb4",
+   "pearl": false,
+   "file": "assets/colors/c02.png",
+   "ans": "c02 | #2(연회색)"
+  },
+  {
+   "id": "c03",
+   "name": "골드",
+   "hex": "#c0b075",
+   "pearl": false,
+   "file": "assets/colors/c03.png",
+   "ans": "c03 | #3(골드)"
+  },
+  {
+   "id": "c04",
+   "name": "연핑크",
+   "hex": "#f6d9d9",
+   "pearl": false,
+   "file": "assets/colors/c04.png",
+   "ans": "c04 | #4(연핑크)"
+  },
+  {
+   "id": "c05",
+   "name": "연하늘",
+   "hex": "#8bbaca",
+   "pearl": false,
+   "file": "assets/colors/c05.png",
+   "ans": "c05 | #5(연하늘)"
+  },
+  {
+   "id": "c06",
+   "name": "연보라",
+   "hex": "#e1c1db",
+   "pearl": false,
+   "file": "assets/colors/c06.png",
+   "ans": "c06 | #8(연보라)"
+  },
+  {
+   "id": "c07",
+   "name": "피치핑크",
+   "hex": "#e8b29b",
+   "pearl": false,
+   "file": "assets/colors/c07.png",
+   "ans": "c07 | #9(피치핑크)"
+  },
+  {
+   "id": "c08",
+   "name": "진회색",
+   "hex": "#3f484c",
+   "pearl": false,
+   "file": "assets/colors/c08.png",
+   "ans": "c08 | #10(진회색)"
+  },
+  {
+   "id": "c09",
+   "name": "빨강",
+   "hex": "#e23f47",
+   "pearl": false,
+   "file": "assets/colors/c09.png",
+   "ans": "c09 | #11(빨강)"
+  },
+  {
+   "id": "c10",
+   "name": "파랑",
+   "hex": "#182f77",
+   "pearl": false,
+   "file": "assets/colors/c10.png",
+   "ans": "c10 | #12(파랑)"
+  },
+  {
+   "id": "c11",
+   "name": "와인",
+   "hex": "#4a0d10",
+   "pearl": false,
+   "file": "assets/colors/c11.png",
+   "ans": "c11 | #13(와인)"
+  },
+  {
+   "id": "c12",
+   "name": "브론즈",
+   "hex": "#635330",
+   "pearl": false,
+   "file": "assets/colors/c12.png",
+   "ans": "c12 | #14(브론즈)"
+  },
+  {
+   "id": "c13",
+   "name": "검정",
+   "hex": "#232524",
+   "pearl": false,
+   "file": "assets/colors/c13.png",
+   "ans": "c13 | #15(검정)"
+  },
+  {
+   "id": "c14",
+   "name": "연민트",
+   "hex": "#a7bdb1",
+   "pearl": false,
+   "file": "assets/colors/c14.png",
+   "ans": "c14 | #16(연민트)"
+  },
+  {
+   "id": "c15",
+   "name": "초록",
+   "hex": "#114d2a",
+   "pearl": false,
+   "file": "assets/colors/c15.png",
+   "ans": "c15 | #17(초록)"
+  },
+  {
+   "id": "c16",
+   "name": "보라",
+   "hex": "#712684",
+   "pearl": false,
+   "file": "assets/colors/c16.png",
+   "ans": "c16 | #18(보라)"
+  },
+  {
+   "id": "c17",
+   "name": "주황",
+   "hex": "#ed7417",
+   "pearl": false,
+   "file": "assets/colors/c17.png",
+   "ans": "c17 | #19(주황)"
+  },
+  {
+   "id": "c18",
+   "name": "청록",
+   "hex": "#07a3c8",
+   "pearl": false,
+   "file": "assets/colors/c18.png",
+   "ans": "c18 | #20(청록)"
+  },
+  {
+   "id": "c19",
+   "name": "진빨강",
+   "hex": "#88161c",
+   "pearl": false,
+   "file": "assets/colors/c19.png",
+   "ans": "c19 | #40(진빨강)"
+  },
+  {
+   "id": "c20",
+   "name": "네이비",
+   "hex": "#2e6199",
+   "pearl": false,
+   "file": "assets/colors/c20.png",
+   "ans": "c20 | #41(네이비)"
+  },
+  {
+   "id": "c21",
+   "name": "은펄 연핑크",
+   "hex": "#d7888d",
+   "pearl": true,
+   "file": "assets/colors/c21.png",
+   "ans": "c21 | #21(은펄연핑크)"
+  },
+  {
+   "id": "c22",
+   "name": "은펄 연하늘",
+   "hex": "#90a5b4",
+   "pearl": true,
+   "file": "assets/colors/c22.png",
+   "ans": "c22 | #22(은펄연하늘)"
+  },
+  {
+   "id": "c23",
+   "name": "은펄 연민트",
+   "hex": "#91bea0",
+   "pearl": true,
+   "file": "assets/colors/c23.png",
+   "ans": "c23 | #23(은펄연민트)"
+  },
+  {
+   "id": "c24",
+   "name": "은펄 연보라",
+   "hex": "#bf88af",
+   "pearl": true,
+   "file": "assets/colors/c24.png",
+   "ans": "c24 | #24(은펄연보라)"
+  },
+  {
+   "id": "c25",
+   "name": "은펄 빨강",
+   "hex": "#bf2123",
+   "pearl": true,
+   "file": "assets/colors/c25.png",
+   "ans": "c25 | #29(은펄빨강)"
+  },
+  {
+   "id": "c26",
+   "name": "은펄 진회색",
+   "hex": "#5a5a65",
+   "pearl": true,
+   "file": "assets/colors/c26.png",
+   "ans": "c26 | #30(은펄진회색)"
+  }
+ ],
+ "icons": [
+  {
+   "id": "i001",
+   "name": "하트(채움)",
+   "group": "basic",
+   "w": 39,
+   "h": 34,
+   "file": "assets/icons/i001.png",
+   "ans": "i001 | 아이콘1 | 하트(채움)"
+  },
+  {
+   "id": "i002",
+   "name": "하트(빈)",
+   "group": "basic",
+   "w": 40,
+   "h": 37,
+   "file": "assets/icons/i002.png",
+   "ans": "i002 | 아이콘2 | 하트(빈)"
+  },
+  {
+   "id": "i003",
+   "name": "하트(화살)",
+   "group": "basic",
+   "w": 48,
+   "h": 44,
+   "file": "assets/icons/i003.png",
+   "ans": "i003 | 아이콘3 | 하트(화살)"
+  },
+  {
+   "id": "i004",
+   "name": "반짝이",
+   "group": "basic",
+   "w": 37,
+   "h": 42,
+   "file": "assets/icons/i004.png",
+   "ans": "i004 | 아이콘4 | 반짝이"
+  },
+  {
+   "id": "i005",
+   "name": "반짝이(작은)",
+   "group": "basic",
+   "w": 36,
+   "h": 41,
+   "file": "assets/icons/i005.png",
+   "ans": "i005 | 아이콘5 | 반짝이(작은)"
+  },
+  {
+   "id": "i006",
+   "name": "다이아(반짝)",
+   "group": "basic",
+   "w": 42,
+   "h": 44,
+   "file": "assets/icons/i006.png",
+   "ans": "i006 | 아이콘6 | 다이아(반짝)"
+  },
+  {
+   "id": "i007",
+   "name": "다이아몬드",
+   "group": "basic",
+   "w": 38,
+   "h": 32,
+   "file": "assets/icons/i007.png",
+   "ans": "i007 | 아이콘7 | 다이아몬드"
+  },
+  {
+   "id": "i008",
+   "name": "활과 화살",
+   "group": "basic",
+   "w": 37,
+   "h": 37,
+   "file": "assets/icons/i008.png",
+   "ans": "i008 | 아이콘8 | 활과 화살"
+  },
+  {
+   "id": "i009",
+   "name": "행성",
+   "group": "basic",
+   "w": 42,
+   "h": 29,
+   "file": "assets/icons/i009.png",
+   "ans": "i009 | 아이콘9 | 행성"
+  },
+  {
+   "id": "i010",
+   "name": "로켓",
+   "group": "basic",
+   "w": 36,
+   "h": 37,
+   "file": "assets/icons/i010.png",
+   "ans": "i010 | 아이콘10 | 로켓"
+  },
+  {
+   "id": "i011",
+   "name": "단검",
+   "group": "basic",
+   "w": 37,
+   "h": 41,
+   "file": "assets/icons/i011.png",
+   "ans": "i011 | 아이콘11 | 단검"
+  },
+  {
+   "id": "i012",
+   "name": "램프",
+   "group": "basic",
+   "w": 42,
+   "h": 30,
+   "file": "assets/icons/i012.png",
+   "ans": "i012 | 아이콘12 | 램프"
+  },
+  {
+   "id": "i013",
+   "name": "원자",
+   "group": "basic",
+   "w": 37,
+   "h": 41,
+   "file": "assets/icons/i013.png",
+   "ans": "i013 | 아이콘13 | 원자"
+  },
+  {
+   "id": "i014",
+   "name": "외계인",
+   "group": "basic",
+   "w": 35,
+   "h": 38,
+   "file": "assets/icons/i014.png",
+   "ans": "i014 | 아이콘14 | 외계인"
+  },
+  {
+   "id": "i015",
+   "name": "지구",
+   "group": "basic",
+   "w": 37,
+   "h": 38,
+   "file": "assets/icons/i015.png",
+   "ans": "i015 | 아이콘15 | 지구"
+  },
+  {
+   "id": "i016",
+   "name": "낙타",
+   "group": "basic",
+   "w": 41,
+   "h": 37,
+   "file": "assets/icons/i016.png",
+   "ans": "i016 | 아이콘16 | 낙타"
+  },
+  {
+   "id": "i017",
+   "name": "딱정벌레",
+   "group": "basic",
+   "w": 29,
+   "h": 39,
+   "file": "assets/icons/i017.png",
+   "ans": "i017 | 아이콘17 | 딱정벌레"
+  },
+  {
+   "id": "i018",
+   "name": "리본",
+   "group": "basic",
+   "w": 42,
+   "h": 34,
+   "file": "assets/icons/i018.png",
+   "ans": "i018 | 아이콘18 | 리본"
+  },
+  {
+   "id": "i019",
+   "name": "열쇠(장식)",
+   "group": "basic",
+   "w": 37,
+   "h": 40,
+   "file": "assets/icons/i019.png",
+   "ans": "i019 | 아이콘19 | 열쇠(장식)"
+  },
+  {
+   "id": "i020",
+   "name": "열쇠",
+   "group": "basic",
+   "w": 30,
+   "h": 43,
+   "file": "assets/icons/i020.png",
+   "ans": "i020 | 아이콘20 | 열쇠"
+  },
+  {
+   "id": "i021",
+   "name": "돌고래",
+   "group": "basic",
+   "w": 45,
+   "h": 36,
+   "file": "assets/icons/i021.png",
+   "ans": "i021 | 아이콘21 | 돌고래"
+  },
+  {
+   "id": "i022",
+   "name": "고래",
+   "group": "basic",
+   "w": 48,
+   "h": 37,
+   "file": "assets/icons/i022.png",
+   "ans": "i022 | 아이콘22 | 고래"
+  },
+  {
+   "id": "i023",
+   "name": "갈매기",
+   "group": "basic",
+   "w": 48,
+   "h": 30,
+   "file": "assets/icons/i023.png",
+   "ans": "i023 | 아이콘23 | 갈매기"
+  },
+  {
+   "id": "i024",
+   "name": "조개",
+   "group": "basic",
+   "w": 37,
+   "h": 38,
+   "file": "assets/icons/i024.png",
+   "ans": "i024 | 아이콘24 | 조개"
+  },
+  {
+   "id": "i025",
+   "name": "불가사리",
+   "group": "basic",
+   "w": 40,
+   "h": 39,
+   "file": "assets/icons/i025.png",
+   "ans": "i025 | 아이콘25 | 불가사리"
+  },
+  {
+   "id": "i026",
+   "name": "모닥불",
+   "group": "basic",
+   "w": 34,
+   "h": 40,
+   "file": "assets/icons/i026.png",
+   "ans": "i026 | 아이콘26 | 모닥불"
+  },
+  {
+   "id": "i027",
+   "name": "히비스커스",
+   "group": "basic",
+   "w": 37,
+   "h": 39,
+   "file": "assets/icons/i027.png",
+   "ans": "i027 | 아이콘27 | 히비스커스"
+  },
+  {
+   "id": "i028",
+   "name": "야자수",
+   "group": "basic",
+   "w": 34,
+   "h": 38,
+   "file": "assets/icons/i028.png",
+   "ans": "i028 | 아이콘28 | 야자수"
+  },
+  {
+   "id": "i029",
+   "name": "장미",
+   "group": "basic",
+   "w": 37,
+   "h": 45,
+   "file": "assets/icons/i029.png",
+   "ans": "i029 | 아이콘29 | 장미"
+  },
+  {
+   "id": "i030",
+   "name": "벚꽃",
+   "group": "basic",
+   "w": 39,
+   "h": 37,
+   "file": "assets/icons/i030.png",
+   "ans": "i030 | 아이콘30 | 벚꽃"
+  },
+  {
+   "id": "i031",
+   "name": "조타륜",
+   "group": "basic",
+   "w": 40,
+   "h": 40,
+   "file": "assets/icons/i031.png",
+   "ans": "i031 | 아이콘31 | 조타륜"
+  },
+  {
+   "id": "i032",
+   "name": "닻",
+   "group": "basic",
+   "w": 38,
+   "h": 39,
+   "file": "assets/icons/i032.png",
+   "ans": "i032 | 아이콘32 | 닻"
+  },
+  {
+   "id": "i033",
+   "name": "번개",
+   "group": "basic",
+   "w": 27,
+   "h": 43,
+   "file": "assets/icons/i033.png",
+   "ans": "i033 | 아이콘33 | 번개"
+  },
+  {
+   "id": "i034",
+   "name": "비구름",
+   "group": "basic",
+   "w": 37,
+   "h": 39,
+   "file": "assets/icons/i034.png",
+   "ans": "i034 | 아이콘34 | 비구름"
+  },
+  {
+   "id": "i035",
+   "name": "구름",
+   "group": "basic",
+   "w": 43,
+   "h": 32,
+   "file": "assets/icons/i035.png",
+   "ans": "i035 | 아이콘35 | 구름"
+  },
+  {
+   "id": "i036",
+   "name": "달과 별",
+   "group": "basic",
+   "w": 36,
+   "h": 39,
+   "file": "assets/icons/i036.png",
+   "ans": "i036 | 아이콘36 | 달과 별"
+  },
+  {
+   "id": "i037",
+   "name": "별(빈)",
+   "group": "basic",
+   "w": 34,
+   "h": 34,
+   "file": "assets/icons/i037.png",
+   "ans": "i037 | 아이콘37 | 별(빈)"
+  },
+  {
+   "id": "i038",
+   "name": "다윗별",
+   "group": "basic",
+   "w": 33,
+   "h": 36,
+   "file": "assets/icons/i038.png",
+   "ans": "i038 | 아이콘38 | 다윗별"
+  },
+  {
+   "id": "i039",
+   "name": "초승달",
+   "group": "basic",
+   "w": 32,
+   "h": 33,
+   "file": "assets/icons/i039.png",
+   "ans": "i039 | 아이콘39 | 초승달"
+  },
+  {
+   "id": "i040",
+   "name": "구름과 달",
+   "group": "basic",
+   "w": 39,
+   "h": 37,
+   "file": "assets/icons/i040.png",
+   "ans": "i040 | 아이콘40 | 구름과 달"
+  },
+  {
+   "id": "i041",
+   "name": "카드(스페이드)",
+   "group": "basic",
+   "w": 41,
+   "h": 42,
+   "file": "assets/icons/i041.png",
+   "ans": "i041 | 아이콘41 | 카드(스페이드)"
+  },
+  {
+   "id": "i042",
+   "name": "카드(3장)",
+   "group": "basic",
+   "w": 49,
+   "h": 30,
+   "file": "assets/icons/i042.png",
+   "ans": "i042 | 아이콘42 | 카드(3장)"
+  },
+  {
+   "id": "i043",
+   "name": "주사위",
+   "group": "basic",
+   "w": 33,
+   "h": 37,
+   "file": "assets/icons/i043.png",
+   "ans": "i043 | 아이콘43 | 주사위"
+  },
+  {
+   "id": "i044",
+   "name": "입술",
+   "group": "basic",
+   "w": 48,
+   "h": 29,
+   "file": "assets/icons/i044.png",
+   "ans": "i044 | 아이콘44 | 입술"
+  },
+  {
+   "id": "i045",
+   "name": "립스틱",
+   "group": "basic",
+   "w": 19,
+   "h": 38,
+   "file": "assets/icons/i045.png",
+   "ans": "i045 | 아이콘45 | 립스틱"
+  },
+  {
+   "id": "i046",
+   "name": "럭비공",
+   "group": "basic",
+   "w": 35,
+   "h": 34,
+   "file": "assets/icons/i046.png",
+   "ans": "i046 | 아이콘46 | 럭비공"
+  },
+  {
+   "id": "i047",
+   "name": "돋보기",
+   "group": "basic",
+   "w": 37,
+   "h": 37,
+   "file": "assets/icons/i047.png",
+   "ans": "i047 | 아이콘47 | 돋보기"
+  },
+  {
+   "id": "i048",
+   "name": "야구",
+   "group": "basic",
+   "w": 37,
+   "h": 38,
+   "file": "assets/icons/i048.png",
+   "ans": "i048 | 아이콘48 | 야구"
+  },
+  {
+   "id": "i049",
+   "name": "클래퍼보드",
+   "group": "basic",
+   "w": 33,
+   "h": 37,
+   "file": "assets/icons/i049.png",
+   "ans": "i049 | 아이콘49 | 클래퍼보드"
+  },
+  {
+   "id": "i050",
+   "name": "티켓",
+   "group": "basic",
+   "w": 42,
+   "h": 30,
+   "file": "assets/icons/i050.png",
+   "ans": "i050 | 아이콘50 | 티켓"
+  },
+  {
+   "id": "i051",
+   "name": "탁구",
+   "group": "basic",
+   "w": 37,
+   "h": 42,
+   "file": "assets/icons/i051.png",
+   "ans": "i051 | 아이콘51 | 탁구"
+  },
+  {
+   "id": "i052",
+   "name": "축구공",
+   "group": "basic",
+   "w": 37,
+   "h": 37,
+   "file": "assets/icons/i052.png",
+   "ans": "i052 | 아이콘52 | 축구공"
+  },
+  {
+   "id": "i053",
+   "name": "배구공",
+   "group": "basic",
+   "w": 37,
+   "h": 37,
+   "file": "assets/icons/i053.png",
+   "ans": "i053 | 아이콘53 | 배구공"
+  },
+  {
+   "id": "i054",
+   "name": "과녁",
+   "group": "basic",
+   "w": 42,
+   "h": 42,
+   "file": "assets/icons/i054.png",
+   "ans": "i054 | 아이콘54 | 과녁"
+  },
+  {
+   "id": "i055",
+   "name": "메달",
+   "group": "basic",
+   "w": 30,
+   "h": 41,
+   "file": "assets/icons/i055.png",
+   "ans": "i055 | 아이콘55 | 메달"
+  },
+  {
+   "id": "i056",
+   "name": "펜",
+   "group": "basic",
+   "w": 37,
+   "h": 37,
+   "file": "assets/icons/i056.png",
+   "ans": "i056 | 아이콘56 | 펜"
+  },
+  {
+   "id": "i057",
+   "name": "콧수염",
+   "group": "basic",
+   "w": 45,
+   "h": 20,
+   "file": "assets/icons/i057.png",
+   "ans": "i057 | 아이콘57 | 콧수염"
+  },
+  {
+   "id": "i058",
+   "name": "왕관",
+   "group": "basic",
+   "w": 37,
+   "h": 36,
+   "file": "assets/icons/i058.png",
+   "ans": "i058 | 아이콘58 | 왕관"
+  },
+  {
+   "id": "i059",
+   "name": "칵테일",
+   "group": "basic",
+   "w": 39,
+   "h": 37,
+   "file": "assets/icons/i059.png",
+   "ans": "i059 | 아이콘59 | 칵테일"
+  },
+  {
+   "id": "i060",
+   "name": "심장",
+   "group": "basic",
+   "w": 31,
+   "h": 37,
+   "file": "assets/icons/i060.png",
+   "ans": "i060 | 아이콘60 | 심장"
+  },
+  {
+   "id": "i061",
+   "name": "수갑",
+   "group": "basic",
+   "w": 40,
+   "h": 40,
+   "file": "assets/icons/i061.png",
+   "ans": "i061 | 아이콘61 | 수갑"
+  },
+  {
+   "id": "i062",
+   "name": "권총",
+   "group": "basic",
+   "w": 40,
+   "h": 36,
+   "file": "assets/icons/i062.png",
+   "ans": "i062 | 아이콘62 | 권총"
+  },
+  {
+   "id": "i063",
+   "name": "플라스크",
+   "group": "basic",
+   "w": 35,
+   "h": 45,
+   "file": "assets/icons/i063.png",
+   "ans": "i063 | 아이콘63 | 플라스크"
+  },
+  {
+   "id": "i064",
+   "name": "해골",
+   "group": "basic",
+   "w": 40,
+   "h": 42,
+   "file": "assets/icons/i064.png",
+   "ans": "i064 | 아이콘64 | 해골"
+  },
+  {
+   "id": "i065",
+   "name": "폭탄",
+   "group": "basic",
+   "w": 31,
+   "h": 43,
+   "file": "assets/icons/i065.png",
+   "ans": "i065 | 아이콘65 | 폭탄"
+  },
+  {
+   "id": "i066",
+   "name": "CD",
+   "group": "basic",
+   "w": 40,
+   "h": 40,
+   "file": "assets/icons/i066.png",
+   "ans": "i066 | 아이콘66 | CD"
+  },
+  {
+   "id": "i067",
+   "name": "피아노",
+   "group": "basic",
+   "w": 38,
+   "h": 33,
+   "file": "assets/icons/i067.png",
+   "ans": "i067 | 아이콘67 | 피아노"
+  },
+  {
+   "id": "i068",
+   "name": "카세트",
+   "group": "basic",
+   "w": 46,
+   "h": 33,
+   "file": "assets/icons/i068.png",
+   "ans": "i068 | 아이콘68 | 카세트"
+  },
+  {
+   "id": "i069",
+   "name": "스노우볼",
+   "group": "basic",
+   "w": 36,
+   "h": 42,
+   "file": "assets/icons/i069.png",
+   "ans": "i069 | 아이콘69 | 스노우볼"
+  },
+  {
+   "id": "i070",
+   "name": "진저브레드",
+   "group": "basic",
+   "w": 37,
+   "h": 42,
+   "file": "assets/icons/i070.png",
+   "ans": "i070 | 아이콘70 | 진저브레드"
+  },
+  {
+   "id": "i071",
+   "name": "음표",
+   "group": "basic",
+   "w": 26,
+   "h": 44,
+   "file": "assets/icons/i071.png",
+   "ans": "i071 | 아이콘71 | 음표"
+  },
+  {
+   "id": "i072",
+   "name": "기타",
+   "group": "basic",
+   "w": 41,
+   "h": 41,
+   "file": "assets/icons/i072.png",
+   "ans": "i072 | 아이콘72 | 기타"
+  },
+  {
+   "id": "i073",
+   "name": "드럼",
+   "group": "basic",
+   "w": 35,
+   "h": 41,
+   "file": "assets/icons/i073.png",
+   "ans": "i073 | 아이콘73 | 드럼"
+  },
+  {
+   "id": "i074",
+   "name": "냄비",
+   "group": "basic",
+   "w": 38,
+   "h": 34,
+   "file": "assets/icons/i074.png",
+   "ans": "i074 | 아이콘74 | 냄비"
+  },
+  {
+   "id": "i075",
+   "name": "엠블럼",
+   "group": "basic",
+   "w": 42,
+   "h": 42,
+   "file": "assets/icons/i075.png",
+   "ans": "i075 | 아이콘75 | 엠블럼"
+  },
+  {
+   "id": "i076",
+   "name": "오렌지",
+   "group": "basic",
+   "w": 37,
+   "h": 38,
+   "file": "assets/icons/i076.png",
+   "ans": "i076 | 아이콘76 | 오렌지"
+  },
+  {
+   "id": "i077",
+   "name": "레몬",
+   "group": "basic",
+   "w": 40,
+   "h": 37,
+   "file": "assets/icons/i077.png",
+   "ans": "i077 | 아이콘77 | 레몬"
+  },
+  {
+   "id": "i078",
+   "name": "바나나",
+   "group": "basic",
+   "w": 37,
+   "h": 42,
+   "file": "assets/icons/i078.png",
+   "ans": "i078 | 아이콘78 | 바나나"
+  },
+  {
+   "id": "i079",
+   "name": "사과",
+   "group": "basic",
+   "w": 38,
+   "h": 42,
+   "file": "assets/icons/i079.png",
+   "ans": "i079 | 아이콘79 | 사과"
+  },
+  {
+   "id": "i080",
+   "name": "복숭아",
+   "group": "basic",
+   "w": 37,
+   "h": 45,
+   "file": "assets/icons/i080.png",
+   "ans": "i080 | 아이콘80 | 복숭아"
+  },
+  {
+   "id": "i081",
+   "name": "고양이",
+   "group": "basic",
+   "w": 42,
+   "h": 38,
+   "file": "assets/icons/i081.png",
+   "ans": "i081 | 아이콘81 | 고양이"
+  },
+  {
+   "id": "i082",
+   "name": "쥐",
+   "group": "basic",
+   "w": 40,
+   "h": 39,
+   "file": "assets/icons/i082.png",
+   "ans": "i082 | 아이콘82 | 쥐"
+  },
+  {
+   "id": "i083",
+   "name": "강아지",
+   "group": "basic",
+   "w": 45,
+   "h": 39,
+   "file": "assets/icons/i083.png",
+   "ans": "i083 | 아이콘83 | 강아지"
+  },
+  {
+   "id": "i084",
+   "name": "강아지(테리어)",
+   "group": "basic",
+   "w": 38,
+   "h": 39,
+   "file": "assets/icons/i084.png",
+   "ans": "i084 | 아이콘84 | 강아지(테리어)"
+  },
+  {
+   "id": "i085",
+   "name": "곰",
+   "group": "basic",
+   "w": 38,
+   "h": 36,
+   "file": "assets/icons/i085.png",
+   "ans": "i085 | 아이콘85 | 곰"
+  },
+  {
+   "id": "i086",
+   "name": "판다",
+   "group": "basic",
+   "w": 39,
+   "h": 37,
+   "file": "assets/icons/i086.png",
+   "ans": "i086 | 아이콘86 | 판다"
+  },
+  {
+   "id": "i087",
+   "name": "토끼",
+   "group": "basic",
+   "w": 32,
+   "h": 41,
+   "file": "assets/icons/i087.png",
+   "ans": "i087 | 아이콘87 | 토끼"
+  },
+  {
+   "id": "i088",
+   "name": "사자",
+   "group": "basic",
+   "w": 42,
+   "h": 39,
+   "file": "assets/icons/i088.png",
+   "ans": "i088 | 아이콘88 | 사자"
+  },
+  {
+   "id": "i089",
+   "name": "젖소",
+   "group": "basic",
+   "w": 43,
+   "h": 38,
+   "file": "assets/icons/i089.png",
+   "ans": "i089 | 아이콘89 | 젖소"
+  },
+  {
+   "id": "i090",
+   "name": "강아지(불독)",
+   "group": "basic",
+   "w": 34,
+   "h": 38,
+   "file": "assets/icons/i090.png",
+   "ans": "i090 | 아이콘90 | 강아지(불독)"
+  },
+  {
+   "id": "i091",
+   "name": "개구리",
+   "group": "basic",
+   "w": 40,
+   "h": 36,
+   "file": "assets/icons/i091.png",
+   "ans": "i091 | 아이콘91 | 개구리"
+  },
+  {
+   "id": "i092",
+   "name": "원숭이",
+   "group": "basic",
+   "w": 41,
+   "h": 34,
+   "file": "assets/icons/i092.png",
+   "ans": "i092 | 아이콘92 | 원숭이"
+  },
+  {
+   "id": "i093",
+   "name": "코알라",
+   "group": "basic",
+   "w": 47,
+   "h": 35,
+   "file": "assets/icons/i093.png",
+   "ans": "i093 | 아이콘93 | 코알라"
+  },
+  {
+   "id": "i094",
+   "name": "양",
+   "group": "basic",
+   "w": 39,
+   "h": 40,
+   "file": "assets/icons/i094.png",
+   "ans": "i094 | 아이콘94 | 양"
+  },
+  {
+   "id": "i095",
+   "name": "발자국",
+   "group": "basic",
+   "w": 40,
+   "h": 34,
+   "file": "assets/icons/i095.png",
+   "ans": "i095 | 아이콘95 | 발자국"
+  },
+  {
+   "id": "i096",
+   "name": "말",
+   "group": "basic",
+   "w": 27,
+   "h": 44,
+   "file": "assets/icons/i096.png",
+   "ans": "i096 | 아이콘96 | 말"
+  },
+  {
+   "id": "i097",
+   "name": "토끼(서기)",
+   "group": "basic",
+   "w": 30,
+   "h": 42,
+   "file": "assets/icons/i097.png",
+   "ans": "i097 | 아이콘97 | 토끼(서기)"
+  },
+  {
+   "id": "i098",
+   "name": "고슴도치",
+   "group": "basic",
+   "w": 43,
+   "h": 34,
+   "file": "assets/icons/i098.png",
+   "ans": "i098 | 아이콘98 | 고슴도치"
+  },
+  {
+   "id": "i099",
+   "name": "투칸",
+   "group": "basic",
+   "w": 41,
+   "h": 37,
+   "file": "assets/icons/i099.png",
+   "ans": "i099 | 아이콘99 | 투칸"
+  },
+  {
+   "id": "i100",
+   "name": "유니콘",
+   "group": "basic",
+   "w": 47,
+   "h": 38,
+   "file": "assets/icons/i100.png",
+   "ans": "i100 | 아이콘100 | 유니콘"
+  },
+  {
+   "id": "i101",
+   "name": "룸넘버 라인",
+   "group": "shape",
+   "w": 164,
+   "h": 18,
+   "file": "assets/icons/i101.png",
+   "ans": "i101 | [아이콘 101] | 룸넘버 라인"
+  },
+  {
+   "id": "i102",
+   "name": "실선",
+   "group": "shape",
+   "w": 164,
+   "h": 10,
+   "file": "assets/icons/i102.png",
+   "ans": "i102 | [아이콘 102] | 실선"
+  },
+  {
+   "id": "i103",
+   "name": "두 줄 실선",
+   "group": "shape",
+   "w": 164,
+   "h": 15,
+   "file": "assets/icons/i103.png",
+   "ans": "i103 | [아이콘 103] | 두 줄 실선"
+  },
+  {
+   "id": "i104",
+   "name": "다이아 도형",
+   "group": "shape",
+   "w": 161,
+   "h": 24,
+   "file": "assets/icons/i104.png",
+   "ans": "i104 | [아이콘 104] | 다이아 도형"
+  },
+  {
+   "id": "i105",
+   "name": "하트 5(빈)",
+   "group": "shape",
+   "w": 163,
+   "h": 24,
+   "file": "assets/icons/i105.png",
+   "ans": "i105 | [아이콘 105] | 하트 5(빈)"
+  },
+  {
+   "id": "i106",
+   "name": "하트 5(채움)",
+   "group": "shape",
+   "w": 162,
+   "h": 23,
+   "file": "assets/icons/i106.png",
+   "ans": "i106 | [아이콘 106] | 하트 5(채움)"
+  },
+  {
+   "id": "i107",
+   "name": "별 5(빈)",
+   "group": "shape",
+   "w": 164,
+   "h": 27,
+   "file": "assets/icons/i107.png",
+   "ans": "i107 | [아이콘 107] | 별 5(빈)"
+  },
+  {
+   "id": "i108",
+   "name": "별 5(채움)",
+   "group": "shape",
+   "w": 162,
+   "h": 25,
+   "file": "assets/icons/i108.png",
+   "ans": "i108 | [아이콘 108] | 별 5(채움)"
+  },
+  {
+   "id": "i201",
+   "name": "오너먼트",
+   "group": "extra",
+   "w": 44,
+   "h": 50,
+   "file": "assets/icons/i201.png",
+   "ans": "i201 | 아이콘201 | 오너먼트"
+  },
+  {
+   "id": "i202",
+   "name": "트리",
+   "group": "extra",
+   "w": 45,
+   "h": 50,
+   "file": "assets/icons/i202.png",
+   "ans": "i202 | 아이콘202 | 트리"
+  },
+  {
+   "id": "i203",
+   "name": "눈사람",
+   "group": "extra",
+   "w": 49,
+   "h": 52,
+   "file": "assets/icons/i203.png",
+   "ans": "i203 | 아이콘203 | 눈사람"
+  },
+  {
+   "id": "i204",
+   "name": "종",
+   "group": "extra",
+   "w": 52,
+   "h": 44,
+   "file": "assets/icons/i204.png",
+   "ans": "i204 | 아이콘204 | 종"
+  },
+  {
+   "id": "i205",
+   "name": "캔디케인",
+   "group": "extra",
+   "w": 39,
+   "h": 50,
+   "file": "assets/icons/i205.png",
+   "ans": "i205 | 아이콘205 | 캔디케인"
+  },
+  {
+   "id": "i206",
+   "name": "루돌프",
+   "group": "extra",
+   "w": 46,
+   "h": 51,
+   "file": "assets/icons/i206.png",
+   "ans": "i206 | 아이콘206 | 루돌프"
+  },
+  {
+   "id": "i207",
+   "name": "눈송이",
+   "group": "extra",
+   "w": 45,
+   "h": 50,
+   "file": "assets/icons/i207.png",
+   "ans": "i207 | 아이콘207 | 눈송이"
+  },
+  {
+   "id": "i208",
+   "name": "눈사람(단순)",
+   "group": "extra",
+   "w": 35,
+   "h": 57,
+   "file": "assets/icons/i208.png",
+   "ans": "i208 | 아이콘208 | 눈사람(단순)"
+  },
+  {
+   "id": "i209",
+   "name": "홀리",
+   "group": "extra",
+   "w": 50,
+   "h": 40,
+   "file": "assets/icons/i209.png",
+   "ans": "i209 | 아이콘209 | 홀리"
+  },
+  {
+   "id": "i210",
+   "name": "종(홀리)",
+   "group": "extra",
+   "w": 48,
+   "h": 45,
+   "file": "assets/icons/i210.png",
+   "ans": "i210 | 아이콘210 | 종(홀리)"
+  },
+  {
+   "id": "i211",
+   "name": "스노클링",
+   "group": "extra",
+   "w": 45,
+   "h": 46,
+   "file": "assets/icons/i211.png",
+   "ans": "i211 | 아이콘211 | 스노클링"
+  },
+  {
+   "id": "i212",
+   "name": "스키 고글",
+   "group": "extra",
+   "w": 51,
+   "h": 38,
+   "file": "assets/icons/i212.png",
+   "ans": "i212 | 아이콘212 | 스키 고글"
+  },
+  {
+   "id": "i213",
+   "name": "볼링핀",
+   "group": "extra",
+   "w": 31,
+   "h": 53,
+   "file": "assets/icons/i213.png",
+   "ans": "i213 | 아이콘213 | 볼링핀"
+  },
+  {
+   "id": "i214",
+   "name": "조개(진주)",
+   "group": "extra",
+   "w": 51,
+   "h": 48,
+   "file": "assets/icons/i214.png",
+   "ans": "i214 | 아이콘214 | 조개(진주)"
+  },
+  {
+   "id": "i215",
+   "name": "야구공",
+   "group": "extra",
+   "w": 45,
+   "h": 45,
+   "file": "assets/icons/i215.png",
+   "ans": "i215 | 아이콘215 | 야구공"
+  },
+  {
+   "id": "i216",
+   "name": "테니스",
+   "group": "extra",
+   "w": 51,
+   "h": 50,
+   "file": "assets/icons/i216.png",
+   "ans": "i216 | 아이콘216 | 테니스"
+  },
+  {
+   "id": "i217",
+   "name": "셔틀콕",
+   "group": "extra",
+   "w": 48,
+   "h": 50,
+   "file": "assets/icons/i217.png",
+   "ans": "i217 | 아이콘217 | 셔틀콕"
+  },
+  {
+   "id": "i218",
+   "name": "골프 깃발",
+   "group": "extra",
+   "w": 50,
+   "h": 51,
+   "file": "assets/icons/i218.png",
+   "ans": "i218 | 아이콘218 | 골프 깃발"
+  },
+  {
+   "id": "i219",
+   "name": "골프채",
+   "group": "extra",
+   "w": 51,
+   "h": 49,
+   "file": "assets/icons/i219.png",
+   "ans": "i219 | 아이콘219 | 골프채"
+  },
+  {
+   "id": "i220",
+   "name": "골프 그린",
+   "group": "extra",
+   "w": 40,
+   "h": 51,
+   "file": "assets/icons/i220.png",
+   "ans": "i220 | 아이콘220 | 골프 그린"
+  },
+  {
+   "id": "i221",
+   "name": "텐트",
+   "group": "extra",
+   "w": 53,
+   "h": 37,
+   "file": "assets/icons/i221.png",
+   "ans": "i221 | 아이콘221 | 텐트"
+  },
+  {
+   "id": "i222",
+   "name": "텐트(삼각)",
+   "group": "extra",
+   "w": 51,
+   "h": 40,
+   "file": "assets/icons/i222.png",
+   "ans": "i222 | 아이콘222 | 텐트(삼각)"
+  },
+  {
+   "id": "i223",
+   "name": "복싱",
+   "group": "extra",
+   "w": 35,
+   "h": 53,
+   "file": "assets/icons/i223.png",
+   "ans": "i223 | 아이콘223 | 복싱"
+  },
+  {
+   "id": "i224",
+   "name": "설탕해골",
+   "group": "extra",
+   "w": 39,
+   "h": 46,
+   "file": "assets/icons/i224.png",
+   "ans": "i224 | 아이콘224 | 설탕해골"
+  }
+ ],
+ "groups": [
+  {
+   "key": "basic",
+   "label": "기본",
+   "hint": "매일 쓰는 그림"
+  },
+  {
+   "key": "shape",
+   "label": "라인·구분",
+   "hint": "선과 도형"
+  },
+  {
+   "key": "extra",
+   "label": "시즌·취미",
+   "hint": "겨울과 취미"
+  }
+ ],
+ "points": [
+  {
+   "key": "white",
+   "label": "화이트",
+   "swatch": "#f7f4ec",
+   "ans": "화이트 (흰펄각인)"
+  },
+  {
+   "key": "gold",
+   "label": "골드",
+   "swatch": "#c9a86a",
+   "ans": "골드 (골드각인)"
+  },
+  {
+   "key": "silver",
+   "label": "실버",
+   "swatch": "#c4c8cd",
+   "ans": "실버 (실버각인)"
+  }
+ ],
+ "styles": [
+  {
+   "key": "classic",
+   "label": "클래식",
+   "sample": "Aa",
+   "ans": "클래식(세리프)"
+  },
+  {
+   "key": "modern",
+   "label": "모던",
+   "sample": "Aa",
+   "ans": "모던(고딕)"
+  },
+  {
+   "key": "hand",
+   "label": "손글씨",
+   "sample": "Aa",
+   "ans": "귀여운 손글씨"
+  },
+  {
+   "key": "any",
+   "label": "상관없음",
+   "sample": "Aa",
+   "ans": "상관없음"
+  }
+ ],
+ "form": {
+  "url": "https://docs.google.com/forms/d/e/1FAIpQLScHiqyQctbnA4A4SVajwJSnQwvAobKwIQDK93OQOcgsBoHjxA/formResponse",
+  "entries": {
+   "name": "entry.122252175",
+   "keyword": "entry.166643709",
+   "color": "entry.795678224",
+   "point": "entry.1156382201",
+   "icon": "entry.767511471",
+   "style": "entry.1136245929"
+  }
+ }
+}
