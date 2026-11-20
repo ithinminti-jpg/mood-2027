@@ -331,8 +331,10 @@
 
   /* ---------- submit ---------- */
   function imageAnswer() {
-    const art = state.arts.map(id => stripBrackets(ICONS.get(id).ans));
-    const line = state.lines.map(id => stripBrackets(ICONS.get(id).ans));
+    const dec = v => (DATA.enc && typeof v === 'string' ? b64utf8(v) : v);
+    const label = id => stripBrackets(dec(ICONS.get(id).ans));
+    const art = state.arts.map(label);
+    const line = state.lines.map(label);
     return `그림: [${art.join(', ')}] / 라인: [${line.join(', ')}]`;
   }
 
