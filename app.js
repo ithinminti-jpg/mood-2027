@@ -1,11 +1,12 @@
-/* 2027 나만의 무드 — app.js (v4) */
+/* 2027 나만의 무드 — app.js (v5: 그림·라인 각 2자리, 같은 항목 2번 선택 허용) */
 (() => {
   'use strict';
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  const LIMIT = 2;          // 그림·라인 각각 두 개까지
+  const SLOTS = 2;          // 그림·라인 각각 두 자리
+  const MARKS = ['①', '②'];
   const LINE_SKIP = 'i101'; // ROOM NO. 라인은 보기에서 제외
 
   /* ---------- state ---------- */
@@ -15,8 +16,8 @@
     number: '',
     colorId: null,
     moodKey: null,
-    arts: [],   // 그림 최대 2 (고른 순서)
-    lines: []   // 라인·구분 최대 2 (고른 순서)
+    arts: [null, null],   // 그림 자리 ①, ② (같은 항목 중복 허용)
+    lines: [null, null]   // 라인·구분 자리 ①, ②
   };
 
   let DATA = null;
@@ -35,6 +36,18 @@
 
   /* ---------- helpers ---------- */
   const stripBrackets = s => String(s).replace(/[[\]]/g, '').replace(/\s+/g, ' ').trim();
+  const iconName = id => (id && ICONS.get(id) ? ICONS.get(id).name : '');
+  const slotsOf = kind => (kind === 'art' ? state.arts : state.lines);
+
+  /* 받침에 맞는 조사 (을/를) */
+  function josa(word, withBatchim, without) {
+    const s = String(word).replace(/[)\]}>\s.,]+$/, '');
+    for (let i = s.length - 1; i >= 0; i--) {
+      const code = s.charCodeAt(i);
+      if (code >= 0xAC00 && code <= 0xD7A3) return ((code - 0xAC00) % 28) ? withBatchim : without;
+    }
+    return without;
+  }
 
   /* ---------- color ---------- */
   function renderColors() {
@@ -92,7 +105,62 @@
     });
   }
 
-  /* ---------- image grid (2개 고르기) ---------- */
+  /* ---------- 자리(슬롯) 칩 ---------- */
+  function renderSlots() {
+    [['art', 'artSlots', '그림'], ['line', 'lineSlots', '라인']].forEach(([kind, hostId, label]) => {
+      const host = $('#' + hostId);
+      if (!host) return;
+      for (let i = 0; i < SLOTS; i++) {
+        const d = document.createElement('div');
+        d.className = 'slot';
+        d.dataset.kind = kind;
+        d.dataset.slot = String(i);
+        d.innerHTML = `
+          <span class="slot-no" aria-hidden="true">${MARKS[i]}</span>
+          <span class="slot-thumb" aria-hidden="true"></span>
+          <span class="slot-name">비어 있음</span>
+          <button type="button" class="slot-x" data-kind="${kind}" data-slot="${i}" aria-label="${label} ${i + 1}번 자리 비우기">×</button>`;
+        host.appendChild(d);
+      }
+      host.addEventListener('click', e => {
+        const x = e.target.closest('.slot-x');
+        if (!x) return;
+        clearSlot(kind, Number(x.dataset.slot));
+      });
+    });
+  }
+
+  function syncSlots(kind) {
+    const arr = slotsOf(kind);
+    $$(`#${kind}Slots .slot`).forEach((el, i) => {
+      const id = arr[i];
+      const filled = !!id;
+      el.classList.toggle('filled', filled);
+      const thumb = el.querySelector('.slot-thumb');
+      const name = el.querySelector('.slot-name');
+      if (filled && ICONS.get(id)) {
+        thumb.innerHTML = `<img src="${ICONS.get(id).file}" alt="">`;
+        name.textContent = ICONS.get(id).name;
+      } else {
+        thumb.innerHTML = '';
+        name.textContent = '비어 있음';
+      }
+    });
+  }
+
+  function clearSlot(kind, i) {
+    const arr = slotsOf(kind);
+    if (!arr[i]) return;
+    const removed = iconName(arr[i]);
+    arr[i] = null;
+    syncGrid(kind);
+    syncSlots(kind);
+    refreshPickState();
+    notice(kind === 'art' ? 'artHint' : 'lineHint', `${MARKS[i]} 자리의 ‘${removed}’${josa(removed, '을', '를')} 비웠어요.`, true);
+    updateDock();
+  }
+
+  /* ---------- image grid ---------- */
   function iconButton(i) {
     const b = document.createElement('button');
     b.type = 'button';
@@ -117,24 +185,26 @@
 
     artGrid.addEventListener('click', e => {
       const b = e.target.closest('.icon-cell');
-      if (b) togglePick('art', b.dataset.id);
+      if (b) pick('art', b.dataset.id);
     });
     lineGrid.addEventListener('click', e => {
       const b = e.target.closest('.icon-cell');
-      if (b) togglePick('line', b.dataset.id);
+      if (b) pick('line', b.dataset.id);
     });
 
+    syncGrid('art');
+    syncGrid('line');
     bindArtScroll();
   }
 
-  /* 그림 그리드: 화면 폭에 맞춰 4행 × (4.6열) 가로 스크롤 칸 크기 계산 */
+  /* 그림 그리드: 화면 폭에 맞춰 4행 × (4.3열) 가로 스크롤 칸 크기 계산 */
   function sizeArtGrid() {
     const sc = $('#artScroll');
     const grid = $('#artGrid');
     if (!sc || !grid) return;
     const gap = 6;
-    const per = window.innerWidth >= 600 ? 6.4 : 4.6;
-    const inner = sc.clientWidth - 6; // 좌우 padding 3px 씩
+    const per = window.innerWidth >= 600 ? 6.4 : 4.3;
+    const inner = sc.clientWidth - 6;
     const cell = Math.max(46, Math.floor((inner - gap * (Math.ceil(per) - 1)) / per));
     grid.style.setProperty('--cell', cell + 'px');
   }
@@ -156,52 +226,49 @@
     sync();
   }
 
-  function togglePick(kind, id) {
-    const list = kind === 'art' ? state.arts : state.lines;
-    const gridSel = kind === 'art' ? '#artGrid' : '#lineGrid';
-    const idx = list.indexOf(id);
-    let removed = null;
+  /* 한 번 누르면 빈 자리(① → ②)에 담기고, 둘 다 차 있으면 ② 자리를 바꾼다.
+     같은 항목을 두 번 누르면 ①·②에 같은 것이 담긴다. */
+  function pick(kind, id) {
+    const arr = slotsOf(kind);
+    let slot = arr.indexOf(null);
+    let replaced = null;
+    if (slot === -1) { slot = SLOTS - 1; replaced = arr[slot]; }
+    arr[slot] = id;
 
-    if (idx >= 0) {
-      list.splice(idx, 1);
-    } else {
-      if (list.length >= LIMIT) removed = list.shift();
-      list.push(id);
-    }
-
-    $$(`${gridSel} .icon-cell`).forEach(el => {
-      const pos = list.indexOf(el.dataset.id);
-      el.setAttribute('aria-checked', String(pos >= 0));
-      const badge = el.querySelector('.pick-badge');
-      if (badge) badge.textContent = pos >= 0 ? String(pos + 1) : '';
-    });
-
-    if (removed && kind === 'art') {
-      const nextName = ICONS.get(id).name;
-      notice('artHint', `‘${ICONS.get(removed).name}’ 대신 ‘${nextName}’${josa(nextName, '을', '를')} 담았어요.`, true);
-    } else {
-      notice(kind === 'art' ? 'artHint' : 'lineHint');
-    }
-    if (kind === 'art' && state.arts.length) $('#errIcon').hidden = true;
-
+    syncGrid(kind);
+    syncSlots(kind);
     refreshPickState();
+
+    const name = iconName(id);
+    const hintId = kind === 'art' ? 'artHint' : 'lineHint';
+    if (replaced) {
+      notice(hintId, `${MARKS[slot]} 자리의 ‘${iconName(replaced)}’${josa(iconName(replaced), '을', '를')} ‘${name}’${josa(name, '으로', '로')} 바꿨어요.`, true);
+    } else if (arr[0] && arr[1] && arr[0] === arr[1]) {
+      notice(hintId, `① ② 자리에 같은 ‘${name}’${josa(name, '을', '를')} 담았어요.`, true);
+    } else {
+      notice(hintId, `${MARKS[slot]} 자리에 ‘${name}’${josa(name, '을', '를')} 담았어요.`, true);
+    }
+
+    if (kind === 'art' && state.arts[0]) $('#errIcon').hidden = true;
     updateDock();
   }
 
-  const HINTS = {
-    art: '두 개까지 고를 수 있어요. 세 번째를 고르면 먼저 고른 그림이 바뀌어요.',
-    line: '두 개까지 고를 수 있어요.'
-  };
-
-  /* 받침에 맞는 조사 (을/를) */
-  function josa(word, withBatchim, without) {
-    const s = String(word).replace(/[)\]}\s.,]+$/, '');
-    for (let i = s.length - 1; i >= 0; i--) {
-      const code = s.charCodeAt(i);
-      if (code >= 0xAC00 && code <= 0xD7A3) return ((code - 0xAC00) % 28) ? withBatchim : without;
-    }
-    return without;
+  function syncGrid(kind) {
+    const arr = slotsOf(kind);
+    const gridSel = kind === 'art' ? '#artGrid' : '#lineGrid';
+    $$(`${gridSel} .icon-cell`).forEach(el => {
+      const marks = [];
+      arr.forEach((id, i) => { if (id && id === el.dataset.id) marks.push(MARKS[i]); });
+      el.setAttribute('aria-checked', String(marks.length > 0));
+      const badge = el.querySelector('.pick-badge');
+      if (badge) badge.textContent = marks.join('');
+    });
   }
+
+  const HINTS = {
+    art: '빈 자리를 누르면 ①, ② 순서로 담겨요. 같은 그림을 두 번 눌러도 돼요.',
+    line: '빈 자리를 누르면 ①, ② 순서로 담겨요. 같은 라인을 두 번 눌러도 돼요.'
+  };
   const hintTimers = { art: 0, line: 0 };
 
   function notice(which, msg, flash) {
@@ -218,30 +285,27 @@
       }, 4200);
     } else {
       el.classList.remove('flash');
-      const list = kind === 'art' ? state.arts : state.lines;
-      if (list.length >= LIMIT) {
-        el.textContent = '두 개 다 골랐어요.';
-        el.classList.add('full');
-      } else {
-        el.textContent = HINTS[kind];
-        el.classList.remove('full');
-      }
+      el.textContent = HINTS[kind];
     }
   }
 
   function refreshPickState() {
-    [['art', '#artState', state.arts], ['line', '#lineState', state.lines]].forEach(([kind, sel, list]) => {
+    [['art', '#artState', state.arts], ['line', '#lineState', state.lines]].forEach(([kind, sel, arr]) => {
       const el = $(sel);
       if (!el) return;
-      el.textContent = `${list.length} / ${LIMIT}`;
-      el.classList.toggle('is-full', list.length === LIMIT);
+      const n = arr.filter(Boolean).length;
+      el.textContent = `${n} / ${SLOTS}`;
+      el.classList.toggle('is-full', n === SLOTS);
     });
 
     const parts = [];
-    state.arts.forEach(id => parts.push(ICONS.get(id).name));
-    state.lines.forEach(id => parts.push(ICONS.get(id).name));
+    const names = kind => slotsOf(kind).filter(Boolean).map(iconName);
+    const art = names('art');
+    const line = names('line');
+    if (art.length) parts.push(`그림 ${art.join(' · ')}`);
+    if (line.length) parts.push(`라인 ${line.join(' · ')}`);
     $('#iconPicked').innerHTML = parts.length
-      ? `고른 이미지 · <b>${parts.join(' · ')}</b>`
+      ? `고른 이미지 · <b>${parts.join(' / ')}</b>`
       : '아직 고르지 않았어요';
   }
 
@@ -273,7 +337,7 @@
       !!state.name.trim(),
       !!state.colorId,
       !!state.moodKey,
-      state.arts.length > 0,
+      !!state.arts[0],
       !!state.keyword.trim()
     ].filter(Boolean).length;
   }
@@ -297,8 +361,10 @@
     const picked = [];
     if (mood) picked.push(mood.label);
     if (state.number.trim()) picked.push(state.number.trim());
-    if (state.arts.length) picked.push(`그림 ${state.arts.length}`);
-    if (state.lines.length) picked.push(`라인 ${state.lines.length}`);
+    const artN = state.arts.filter(Boolean).length;
+    const lineN = state.lines.filter(Boolean).length;
+    if (artN) picked.push(`그림 ${artN}`);
+    if (lineN) picked.push(`라인 ${lineN}`);
     dockSub.textContent = picked.length ? picked.join(' · ') : '여섯 가지만 고르면 돼요';
   }
 
@@ -309,7 +375,7 @@
     set('#errName', !state.name.trim());
     set('#errColor', !state.colorId);
     set('#errMood', !state.moodKey);
-    set('#errIcon', state.arts.length === 0);
+    set('#errIcon', !state.arts[0]);
     set('#errKeyword', !state.keyword.trim());
     return problems;
   }
@@ -333,8 +399,8 @@
   function imageAnswer() {
     const dec = v => (DATA.enc && typeof v === 'string' ? b64utf8(v) : v);
     const label = id => stripBrackets(dec(ICONS.get(id).ans));
-    const art = state.arts.map(label);
-    const line = state.lines.map(label);
+    const art = state.arts.filter(Boolean).map(label);
+    const line = state.lines.filter(Boolean).map(label);
     return `그림: [${art.join(', ')}] / 라인: [${line.join(', ')}]`;
   }
 
@@ -388,8 +454,8 @@
     const color = COLORS.get(state.colorId);
     const mood = MOODS.get(state.moodKey);
 
-    const artNames = state.arts.map(id => ICONS.get(id).name);
-    const lineNames = state.lines.map(id => ICONS.get(id).name);
+    const artNames = state.arts.filter(Boolean).map(iconName);
+    const lineNames = state.lines.filter(Boolean).map(iconName);
     const imageText = [
       artNames.length ? `그림 ${artNames.join(' · ')}` : '',
       lineNames.length ? `라인 ${lineNames.join(' · ')}` : ''
@@ -445,15 +511,14 @@
     state.number = '';
     state.colorId = null;
     state.moodKey = null;
-    state.arts = [];
-    state.lines = [];
+    state.arts = [null, null];
+    state.lines = [null, null];
     $$('#colorGrid .swatch').forEach(el => el.setAttribute('aria-checked', 'false'));
     $$('#moodGrid .point').forEach(el => el.setAttribute('aria-checked', 'false'));
-    $$('.icon-cell').forEach(el => {
-      el.setAttribute('aria-checked', 'false');
-      const b = el.querySelector('.pick-badge');
-      if (b) b.textContent = '';
-    });
+    syncGrid('art');
+    syncGrid('line');
+    syncSlots('art');
+    syncSlots('line');
     $('#colorPicked').textContent = '아직 고르지 않았어요';
     const sc = $('#artScroll');
     if (sc) sc.scrollLeft = 0;
@@ -497,8 +562,11 @@
 
     renderColors();
     renderMoods();
+    renderSlots();
     renderImageGrids();
     bindInputs();
+    syncSlots('art');
+    syncSlots('line');
     refreshPickState();
     notice('artHint');
     notice('lineHint');
@@ -524,10 +592,10 @@
     selectColor(demo === '2' ? 'c22' : 'c05');
     const moodBtn = document.querySelector(`#moodGrid .point[data-key="${demo === '2' ? 'silver' : 'gold'}"]`);
     if (moodBtn) moodBtn.click();
-    togglePick('art', 'i094');
-    togglePick('art', demo === '2' ? 'i001' : 'i006');
-    togglePick('line', 'i102');
-    if (demo === '2') togglePick('line', 'i105');
+    pick('art', 'i094');
+    pick('art', demo === '2' ? 'i094' : 'i006');
+    pick('line', 'i102');
+    if (demo === '2') pick('line', 'i105');
     updateDock();
   }
 

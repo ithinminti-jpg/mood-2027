@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Pen+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20271120k">
+<link rel="stylesheet" href="styles.css?v=20271120l">
 </head>
 <body>
 <div class="sky" aria-hidden="true"></div>
@@ -182,10 +182,11 @@
         <h2>Your Image</h2>
         <span class="tag required">필수</span>
       </header>
-      <p class="panel-desc">마음에 드는 그림과 라인을 두 개씩 골라 보세요.</p>
+      <p class="panel-desc">마음에 드는 그림과 라인을 두 자리씩 골라 보세요. 같은 것을 두 번 골라도 좋아요.</p>
 
       <div class="pick-block" id="blockArt">
         <div class="pick-head"><h3>그림</h3><span class="pick-count">124</span><span class="pick-state" id="artState">0 / 2</span></div>
+        <div class="slots" id="artSlots" role="group" aria-label="고른 그림 자리"></div>
         <div class="art-wrap" id="artWrap">
           <div class="art-scroll" id="artScroll">
             <div class="art-grid" id="artGrid" role="group" aria-label="그림 124종"></div>
@@ -193,13 +194,14 @@
           <span class="art-fade" aria-hidden="true"></span>
         </div>
         <p class="scroll-cue" id="artCue"><span aria-hidden="true">←</span> 좌우로 넘겨 보세요 <span aria-hidden="true">→</span></p>
-        <p class="pick-hint" id="artHint">두 개까지 고를 수 있어요. 세 번째를 고르면 먼저 고른 그림이 바뀌어요.</p>
+        <p class="pick-hint" id="artHint">빈 자리를 누르면 ①, ② 순서로 담겨요. 같은 그림을 두 번 눌러도 돼요.</p>
       </div>
 
       <div class="pick-block" id="blockLine">
         <div class="pick-head"><h3>라인·구분</h3><span class="pick-count">7</span><span class="pick-state" id="lineState">0 / 2</span></div>
+        <div class="slots" id="lineSlots" role="group" aria-label="고른 라인 자리"></div>
         <div class="line-grid" id="lineGrid" role="group" aria-label="라인·구분 7종"></div>
-        <p class="pick-hint" id="lineHint">두 개까지 고를 수 있어요.</p>
+        <p class="pick-hint" id="lineHint">빈 자리를 누르면 ①, ② 순서로 담겨요. 같은 라인을 두 번 눌러도 돼요.</p>
       </div>
 
       <p class="picked" id="iconPicked">아직 고르지 않았어요</p>
@@ -260,6 +262,6 @@
   </div>
 </div>
 
-<script src="app.js?v=20271120k"></script>
+<script src="app.js?v=20271120l"></script>
 </body>
 </html>
