@@ -654,6 +654,15 @@ main,header,footer,.dock{position:relative;z-index:1}
 }
 .icon-cell[aria-checked="true"] .pick-badge{opacity:1;transform:scale(1)}
 
+/* ---------- 푸터 (맨 아래 문구만, 2027 MOOD 표기는 두지 않는다) ---------- */
+.site-foot{
+  text-align:center;
+  padding:22px 10px 12px;
+  color:var(--muted);
+  font-size:11.5px;
+  line-height:1.8;
+}
+
 /* ---------- dock (선택 요약 + 제출) ---------- */
 .dock{
   position:fixed;
