@@ -292,7 +292,7 @@
     const n = basicPicked();
     dockTitle.textContent = n === 0
       ? '아직 고른 게 없어요'
-      : n === 5 ? '다 골랐어요. 이대로 참여해 주세요' : `다섯 가지 중 ${n}가지를 골랐어요`;
+      : n === 5 ? '다 골랐어요' : `다섯 중 ${n}가지 골랐어요`;
 
     const picked = [];
     if (mood) picked.push(mood.label);
